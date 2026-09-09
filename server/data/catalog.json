@@ -1,28 +1,15 @@
 [
   {
-    "id": "portafolio",
-    "title": "Portafolio Personal",
+    "id": "clack",
+    "title": "Clack",
     "summary": {
-      "es": "Este mismo sitio: React + Express en TypeScript con arquitectura MVVM, documentación viva traída desde la API de GitHub y despliegue en AWS Elastic Beanstalk.",
-      "en": "This very site: React + Express in TypeScript with an MVVM architecture, live documentation pulled from the GitHub API and deployed on AWS Elastic Beanstalk."
+      "es": "Reloj mundial con la hora y la temperatura de cualquier ciudad, alarmas y planificador de reuniones entre husos horarios. Web instalable con arquitectura MVVM y diseño Liquid Glass.",
+      "en": "World clock showing the time and temperature of any city, with alarms and a meeting planner across time zones. Installable web app with an MVVM architecture and Liquid Glass design."
     },
-    "tags": ["React", "TypeScript", "Express", "AWS", "MVVM"],
+    "tags": ["JavaScript", "React", "Node.js", "MVVM", "PWA"],
     "status": "produccion",
-    "repo": "TU-USUARIO-GITHUB/portafolio",
-    "demoUrl": "",
+    "repo": "Rodrixxx7676/Clack",
+    "demoUrl": "https://clack.kursperu.duckdns.org",
     "featured": true
-  },
-  {
-    "id": "proyecto-ejemplo",
-    "title": "Proyecto de Ejemplo",
-    "summary": {
-      "es": "Reemplaza esta entrada por uno de tus repositorios reales. El campo repo apunta a GitHub y de ahí se leen el README, las estrellas y el lenguaje.",
-      "en": "Replace this entry with one of your real repositories. The repo field points to GitHub, and the README, stars and language are read from there."
-    },
-    "tags": ["Node.js", "PostgreSQL"],
-    "status": "activo",
-    "repo": "TU-USUARIO-GITHUB/nombre-del-repo",
-    "demoUrl": "",
-    "featured": false
   }
 ]

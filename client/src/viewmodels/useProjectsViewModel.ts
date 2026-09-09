@@ -15,7 +15,10 @@ export interface ProjectCardModel {
   language: string | null;
   /** Fecha lista para mostrar, ya localizada. Vacía si GitHub no la dio. */
   updatedLabel: string;
+  /** Hay una demo abierta al público: la tarjeta lo anuncia antes del clic. */
   hasDemo: boolean;
+  /** El código es visible en GitHub. */
+  hasRepo: boolean;
   featured: boolean;
 }
 
@@ -64,6 +67,7 @@ export function useProjectsViewModel(locale: string): ProjectsViewModel {
       language: project.github?.language ?? null,
       updatedLabel: formatDate(project.github?.pushedAt ?? null),
       hasDemo: Boolean(project.demoUrl),
+      hasRepo: Boolean(project.repoUrl),
       featured: project.featured,
     }));
   }, [data, locale, formatDate]);

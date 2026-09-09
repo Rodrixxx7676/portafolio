@@ -9,14 +9,20 @@ export function ExperienceSection({
 }: {
   work: TimelineItemModel[];
   education: TimelineItemModel[];
-}): JSX.Element {
+}): JSX.Element | null {
   const { t } = useLocale();
+
+  // Una sección con encabezado y nada debajo se lee como un sitio a medio
+  // hacer: mientras no haya trayectoria cargada, no se dibuja.
+  if (work.length === 0 && education.length === 0) return null;
 
   return (
     <SectionShell id="experience" title={t('experience.title')}>
       <div className="grid gap-12 lg:grid-cols-2">
-        <TimelineColumn title={t('experience.work')} items={work} />
-        <TimelineColumn title={t('experience.education')} items={education} />
+        {work.length > 0 ? <TimelineColumn title={t('experience.work')} items={work} /> : null}
+        {education.length > 0 ? (
+          <TimelineColumn title={t('experience.education')} items={education} />
+        ) : null}
       </div>
     </SectionShell>
   );

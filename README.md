@@ -171,3 +171,20 @@ con los datos curados y sin métricas.
 | `npm run typecheck` | Verifica tipos en todos los workspaces |
 | `npm run bundle` | Genera `deploy/portafolio.zip` para Beanstalk |
 | `npm run clean` | Borra los artefactos de build |
+
+## Pendientes de contenido
+
+Estos archivos tienen marcadores que hay que reemplazar antes de compartir el
+sitio con un reclutador:
+
+- `server/data/catalog.json` → el proyecto **Clack** tiene el resumen, las
+  etiquetas y el bloque `fallbackDoc` con texto de relleno en mayúsculas.
+  Como el repositorio es privado, GitHub no puede entregar su `README.md`: esa
+  documentación se escribe a mano ahí, en HTML simple.
+- `server/data/timeline.json` → está vacío a propósito, así la sección de
+  experiencia no se dibuja. Al cargar entradas reales reaparece sola, junto con
+  su enlace en el menú.
+- `server/data/profile.json` → `resumeUrl` está vacío para que el botón de CV no
+  lleve a un 404. Sube el PDF a `client/public/cv/` y apunta la ruta ahí.
+- `server/data/skills.json` → los niveles del 1 al 5 son una estimación a partir
+  de las tecnologías de tus repositorios; ajústalos.

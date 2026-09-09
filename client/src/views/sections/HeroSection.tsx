@@ -51,6 +51,16 @@ export function HeroSection({
           </a>
         ) : null}
       </div>
+
+      {/* Pista de que la página continúa hacia abajo. */}
+      <a
+        href="#projects"
+        aria-hidden="true"
+        tabIndex={-1}
+        className="absolute bottom-10 left-6 hidden animate-bounce text-2xl text-ink-muted transition hover:text-accent sm:block"
+      >
+        ↓
+      </a>
     </section>
   );
 }

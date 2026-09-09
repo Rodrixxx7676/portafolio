@@ -4,8 +4,17 @@ import { LanguageToggle } from './LanguageToggle.js';
 
 const SECTIONS = ['projects', 'about', 'experience', 'skills', 'contact'] as const;
 
+/** Secciones que se ocultan cuando aún no tienen contenido cargado. */
+type OptionalSection = 'experience' | 'skills';
+
 /** Barra superior fija con navegación por anclas y selector de idioma. */
-export function Header({ name }: { name: string }): JSX.Element {
+export function Header({
+  name,
+  hiddenSections = [],
+}: {
+  name: string;
+  hiddenSections?: OptionalSection[];
+}): JSX.Element {
   const { t } = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -31,7 +40,9 @@ export function Header({ name }: { name: string }): JSX.Element {
         <div className="flex items-center gap-6">
           {/* En móvil la navegación se resuelve haciendo scroll, no con menú. */}
           <ul className="hidden items-center gap-6 md:flex">
-            {SECTIONS.map((section) => (
+            {SECTIONS.filter(
+              (section) => !hiddenSections.includes(section as OptionalSection),
+            ).map((section) => (
               <li key={section}>
                 <a
                   href={`#${section}`}

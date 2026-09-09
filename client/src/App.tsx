@@ -27,9 +27,16 @@ export function App(): JSX.Element {
 
   const name = profileVm.profile?.name ?? '';
 
+  const hiddenSections = [
+    ...(profileVm.work.length === 0 && profileVm.education.length === 0
+      ? (['experience'] as const)
+      : []),
+    ...(profileVm.skills.length === 0 ? (['skills'] as const) : []),
+  ];
+
   return (
     <div className="min-h-screen">
-      <Header name={name} />
+      <Header name={name} hiddenSections={[...hiddenSections]} />
 
       <main>
         <HeroSection

@@ -3,8 +3,10 @@ import { useLocale } from '../../viewmodels/useLocale.js';
 import { SectionShell } from '../components/SectionShell.js';
 
 /** Stack técnico agrupado por categoría, con nivel de 1 a 5. */
-export function SkillsSection({ categories }: { categories: SkillCategory[] }): JSX.Element {
+export function SkillsSection({ categories }: { categories: SkillCategory[] }): JSX.Element | null {
   const { t, tx } = useLocale();
+
+  if (categories.length === 0) return null;
 
   return (
     <SectionShell id="skills" title={t('skills.title')}>
