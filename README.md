@@ -103,6 +103,11 @@ El CV en PDF va en `client/public/cv/` con los nombres que declare
 | `GITHUB_USER` | Usuario por defecto cuando `repo` no trae el owner. | No |
 | `GITHUB_TOKEN` | Sube el límite de la API de GitHub de 60 a 5000 peticiones/hora. | No |
 | `GITHUB_CACHE_TTL_MINUTES` | Minutos de caché de las respuestas de GitHub (30 por defecto). | No |
+| `HTTPS_ENABLED` | Ponla en `true` **solo** cuando el sitio se sirva por HTTPS con certificado. Activa HSTS y la exigencia de HTTPS en la política de seguridad. | No |
+
+> Un entorno de Elastic Beanstalk recién creado escucha solo en HTTP. Si activas
+> `HTTPS_ENABLED` sin tener certificado, el navegador pedirá cada archivo por
+> HTTPS, no obtendrá respuesta y la página se quedará en blanco.
 
 Copia `.env.example` a `.env` para el desarrollo local. **El token nunca se
 commitea**: en AWS se carga con `eb setenv`.

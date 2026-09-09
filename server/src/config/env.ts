@@ -42,6 +42,12 @@ export const env = {
   /** Beanstalk inyecta PORT=8080 en la instancia. */
   port: Number(process.env.PORT ?? 8080),
   isProduction: process.env.NODE_ENV === 'production',
+  /**
+   * El sitio se sirve por HTTPS de verdad (certificado en el balanceador o en
+   * un proxy delante). Mientras sea `false`, el servidor no exige HTTPS ni
+   * anuncia HSTS, porque haría inaccesible un entorno que solo escucha en HTTP.
+   */
+  https: process.env.HTTPS_ENABLED === 'true',
   dataDir: resolvedDataDir,
   clientDist: resolvedClientDist,
   github: {

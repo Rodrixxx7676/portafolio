@@ -20,8 +20,17 @@ app.use(
         styleSrc: ["'self'", "'unsafe-inline'"],
         connectSrc: ["'self'"],
         frameAncestors: ["'self'"],
+        // Solo se exige HTTPS cuando el entorno realmente lo sirve. Un entorno
+        // de Elastic Beanstalk sin certificado escucha únicamente en HTTP: con
+        // esta directiva activa, el navegador pediría cada archivo por HTTPS,
+        // no obtendría respuesta y la página quedaría en blanco.
+        ...(env.https ? {} : { upgradeInsecureRequests: null }),
       },
     },
+    // Misma razón: anunciar HSTS desde un sitio HTTP deja al visitante sin
+    // poder abrirlo durante un año, porque su navegador recordará que debe
+    // usar HTTPS en este dominio.
+    hsts: env.https,
     // Las imágenes remotas del README se bloquearían con la política estricta.
     crossOriginEmbedderPolicy: false,
     crossOriginResourcePolicy: { policy: 'cross-origin' },
