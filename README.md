@@ -160,6 +160,22 @@ Si prefieres la consola web: crea la aplicación, elige la plataforma
 eb setenv GITHUB_USER=tu-usuario GITHUB_TOKEN=ghp_xxx
 ```
 
+### Que no se llene el almacenamiento de versiones
+
+Cada "Cargar e implementar" guarda una copia del paquete en S3. Con ~0,25 MB
+por versión, el tope de 500 MB da para unas 2000 y la cuota de 1000 versiones
+por región se alcanzaría antes, pero conviene no acumularlas.
+
+La solución es una política de ciclo de vida, que se configura una sola vez:
+consola de Elastic Beanstalk → la aplicación **Repositorio** → *Configuración
+del ciclo de vida de versiones de la aplicación*. Ahí se limita por número (por
+ejemplo, conservar las 20 últimas) o por antigüedad, y **hay que marcar la
+casilla que borra también el paquete de S3**: sin ella se elimina el registro
+de la versión pero el archivo sigue ocupando espacio.
+
+Para borrar a mano: *Versiones de la aplicación* → seleccionar las antiguas →
+*Eliminar*. Nunca se borra la versión que está desplegada.
+
 ### Comprobación de salud
 
 El balanceador consulta `/health`, que responde sin tocar la API de GitHub. Si
