@@ -1,0 +1,31 @@
+[
+  {
+    "id": "frontend",
+    "name": { "es": "Frontend", "en": "Frontend" },
+    "skills": [
+      { "name": "React", "level": 4 },
+      { "name": "TypeScript", "level": 4 },
+      { "name": "HTML & CSS", "level": 4 },
+      { "name": "Tailwind CSS", "level": 3 }
+    ]
+  },
+  {
+    "id": "backend",
+    "name": { "es": "Backend", "en": "Backend" },
+    "skills": [
+      { "name": "Node.js", "level": 4 },
+      { "name": "Express", "level": 4 },
+      { "name": "REST APIs", "level": 4 },
+      { "name": "SQL", "level": 3 }
+    ]
+  },
+  {
+    "id": "cloud",
+    "name": { "es": "Cloud y DevOps", "en": "Cloud & DevOps" },
+    "skills": [
+      { "name": "AWS Elastic Beanstalk", "level": 3 },
+      { "name": "Git & GitHub", "level": 4 },
+      { "name": "Linux", "level": 3 }
+    ]
+  }
+]

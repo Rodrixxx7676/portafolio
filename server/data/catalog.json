@@ -1,0 +1,28 @@
+[
+  {
+    "id": "portafolio",
+    "title": "Portafolio Personal",
+    "summary": {
+      "es": "Este mismo sitio: React + Express en TypeScript con arquitectura MVVM, documentación viva traída desde la API de GitHub y despliegue en AWS Elastic Beanstalk.",
+      "en": "This very site: React + Express in TypeScript with an MVVM architecture, live documentation pulled from the GitHub API and deployed on AWS Elastic Beanstalk."
+    },
+    "tags": ["React", "TypeScript", "Express", "AWS", "MVVM"],
+    "status": "produccion",
+    "repo": "TU-USUARIO-GITHUB/portafolio",
+    "demoUrl": "",
+    "featured": true
+  },
+  {
+    "id": "proyecto-ejemplo",
+    "title": "Proyecto de Ejemplo",
+    "summary": {
+      "es": "Reemplaza esta entrada por uno de tus repositorios reales. El campo repo apunta a GitHub y de ahí se leen el README, las estrellas y el lenguaje.",
+      "en": "Replace this entry with one of your real repositories. The repo field points to GitHub, and the README, stars and language are read from there."
+    },
+    "tags": ["Node.js", "PostgreSQL"],
+    "status": "activo",
+    "repo": "TU-USUARIO-GITHUB/nombre-del-repo",
+    "demoUrl": "",
+    "featured": false
+  }
+]

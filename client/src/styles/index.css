@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+/* Paleta y tipografía del sitio, expuestas como tokens de Tailwind v4. */
+@theme {
+  --color-base-950: #070b14;
+  --color-base-900: #0b1220;
+  --color-base-800: #131c2e;
+  --color-base-700: #1e293b;
+  --color-line: #24324a;
+  --color-ink: #e6edf7;
+  --color-ink-muted: #94a3b8;
+  --color-accent: #38bdf8;
+  --color-accent-strong: #0ea5e9;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* El header fijo no debe tapar el título de la sección al navegar por anclas. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-base-950);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Quien navega con teclado siempre debe ver dónde está. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/*
+ * Estilos del README que llega renderizado desde GitHub.
+ * Es HTML ajeno y sin clases de Tailwind, así que se le da forma por etiqueta.
+ */
+.readme-body {
+  line-height: 1.7;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+.readme-body h1,
+.readme-body h2,
+.readme-body h3 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 1.75rem 0 0.75rem;
+}
+.readme-body h1 { font-size: 1.6rem; }
+.readme-body h2 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--color-line);
+  padding-bottom: 0.35rem;
+}
+.readme-body h3 { font-size: 1.1rem; }
+.readme-body p { margin: 0.85rem 0; }
+.readme-body a { color: var(--color-accent); text-decoration: underline; }
+.readme-body ul,
+.readme-body ol { margin: 0.85rem 0; padding-left: 1.4rem; }
+.readme-body ul { list-style: disc; }
+.readme-body ol { list-style: decimal; }
+.readme-body li { margin: 0.3rem 0; }
+.readme-body code {
+  background: var(--color-base-800);
+  border: 1px solid var(--color-line);
+  border-radius: 0.35rem;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.875em;
+}
+.readme-body pre {
+  background: var(--color-base-900);
+  border: 1px solid var(--color-line);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+.readme-body pre code { background: none; border: none; padding: 0; }
+.readme-body blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--color-ink-muted);
+}
+.readme-body img { max-width: 100%; height: auto; border-radius: 0.4rem; }
+.readme-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  display: block;
+  overflow-x: auto;
+}
+.readme-body th,
+.readme-body td { border: 1px solid var(--color-line); padding: 0.5rem 0.75rem; text-align: left; }
+.readme-body th { background: var(--color-base-800); }
+.readme-body hr { border: 0; border-top: 1px solid var(--color-line); margin: 1.5rem 0; }

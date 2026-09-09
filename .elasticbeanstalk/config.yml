@@ -1,0 +1,7 @@
+# Configuración de la EB CLI.
+#
+# `eb init` completa la sección `global` con la aplicación, la región y la
+# plataforma. Lo que importa conservar es `deploy.artifact`: sin esa línea la
+# CLI subiría el código fuente sin compilar en vez del bundle.
+deploy:
+  artifact: deploy/portafolio.zip

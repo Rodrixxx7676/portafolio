@@ -1,0 +1,12 @@
+node_modules/
+dist/
+deploy/
+*.log
+npm-debug.log*
+.env
+.env.local
+.DS_Store
+.elasticbeanstalk/*
+!.elasticbeanstalk/config.yml
+.vscode/
+.idea/

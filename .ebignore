@@ -1,0 +1,15 @@
+# Lo que NO se sube a Elastic Beanstalk.
+# El bundle de despliegue se construye con `npm run bundle`.
+node_modules/
+client/src/
+client/public/
+client/index.html
+client/vite.config.ts
+server/src/
+shared/src/
+scripts/
+.git/
+.env
+.env.local
+*.log
+.DS_Store

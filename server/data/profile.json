@@ -1,0 +1,22 @@
+{
+  "name": "Francisco",
+  "headline": {
+    "es": "Desarrollador de Software",
+    "en": "Software Developer"
+  },
+  "about": {
+    "es": "Desarrollador enfocado en construir aplicaciones web mantenibles, con una arquitectura clara y desplegadas en la nube. Este portafolio está construido con React, Express y TypeScript sobre AWS Elastic Beanstalk, siguiendo una arquitectura Model-View-ViewModel.",
+    "en": "Developer focused on building maintainable web applications with a clear architecture, deployed to the cloud. This portfolio is built with React, Express and TypeScript on AWS Elastic Beanstalk, following a Model-View-ViewModel architecture."
+  },
+  "location": {
+    "es": "Chile",
+    "en": "Chile"
+  },
+  "email": "rodripontevillarroel@gmail.com",
+  "linkedinUrl": "https://www.linkedin.com/in/TU-USUARIO-LINKEDIN",
+  "githubUrl": "https://github.com/TU-USUARIO-GITHUB",
+  "resumeUrl": {
+    "es": "/cv/francisco-cv-es.pdf",
+    "en": "/cv/francisco-cv-en.pdf"
+  }
+}
