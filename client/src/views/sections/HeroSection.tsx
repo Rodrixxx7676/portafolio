@@ -25,19 +25,19 @@ export function HeroSection({
         className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
       />
 
-      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent-soft">
         {location}
       </p>
       <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-6xl">
         {name || 'Francisco'}
-        <span className="text-accent">.</span>
+        <span className="text-accent-soft">.</span>
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-ink-muted sm:text-xl">{headline}</p>
 
       <div className="mt-9 flex flex-wrap gap-4">
         <a
           href="#projects"
-          className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-base-950 transition hover:bg-accent-strong"
+          className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
         >
           {t('hero.cta.projects')}
         </a>
@@ -45,7 +45,7 @@ export function HeroSection({
           <a
             href={resumeUrl}
             download
-            className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+            className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
           >
             {t('hero.cta.resume')} ↓
           </a>
@@ -57,7 +57,7 @@ export function HeroSection({
         href="#projects"
         aria-hidden="true"
         tabIndex={-1}
-        className="absolute bottom-10 left-6 hidden animate-bounce text-2xl text-ink-muted transition hover:text-accent sm:block"
+        className="absolute bottom-10 left-6 hidden animate-bounce text-2xl text-ink-muted transition hover:text-accent-soft sm:block"
       >
         ↓
       </a>

@@ -1,16 +1,30 @@
 @import 'tailwindcss';
 
 /* Paleta y tipografía del sitio, expuestas como tokens de Tailwind v4. */
+/*
+ * Paleta rojo, blanco y negro.
+ *
+ * El rojo de marca (#b40808) es demasiado oscuro para leerse sobre fondo negro:
+ * el contraste queda en 2.2 sobre 1, muy por debajo del mínimo de 4.5 que exige
+ * la norma de accesibilidad. Por eso se separa en dos papeles:
+ *   - `accent`      pinta superficies (botones, barras), siempre con texto claro
+ *                   encima: blanco sobre ese rojo da 6.5 sobre 1.
+ *   - `accent-soft` es el rojo que sí se lee como texto sobre negro (6.7 a 1).
+ * Confundirlos vuelve el texto ilegible, así que no son intercambiables.
+ */
 @theme {
-  --color-base-950: #070b14;
-  --color-base-900: #0b1220;
-  --color-base-800: #131c2e;
-  --color-base-700: #1e293b;
-  --color-line: #24324a;
-  --color-ink: #e6edf7;
-  --color-ink-muted: #94a3b8;
-  --color-accent: #38bdf8;
-  --color-accent-strong: #0ea5e9;
+  --color-base-950: #1a1919;
+  --color-base-900: #262525;
+  --color-base-800: #343333;
+  --color-base-700: #514f4f;
+  --color-line: #424141;
+  --color-ink: #f9f5f5;
+  --color-ink-muted: #b5aeae;
+  --color-accent: #b40808;
+  --color-accent-soft: #e19898;
+  /* Hover de los botones: se oscurece en vez de aclararse, porque aclarar el
+     rojo dejaría el texto blanco por debajo del contraste mínimo. */
+  --color-accent-strong: #8f0606;
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
@@ -57,7 +71,7 @@ body {
 }
 .readme-body h3 { font-size: 1.1rem; }
 .readme-body p { margin: 0.85rem 0; }
-.readme-body a { color: var(--color-accent); text-decoration: underline; }
+.readme-body a { color: var(--color-accent-soft); text-decoration: underline; }
 .readme-body ul,
 .readme-body ol { margin: 0.85rem 0; padding-left: 1.4rem; }
 .readme-body ul { list-style: disc; }

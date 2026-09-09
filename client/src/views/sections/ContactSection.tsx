@@ -26,7 +26,7 @@ export function ContactSection({
             key={link.key}
             href={link.href}
             {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+            className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
           >
             {t(link.key)}
             {link.external ? ' ↗' : ''}
@@ -36,7 +36,7 @@ export function ContactSection({
           <a
             href={resumeUrl}
             download
-            className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-base-950 transition hover:bg-accent-strong"
+            className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
           >
             {t('contact.resume')} ↓
           </a>
@@ -45,7 +45,7 @@ export function ContactSection({
 
       {profile?.email ? (
         <p className="mt-8 text-sm text-ink-muted">
-          <a href={`mailto:${profile.email}`} className="text-accent hover:underline">
+          <a href={`mailto:${profile.email}`} className="text-accent-soft hover:underline">
             {profile.email}
           </a>
         </p>

@@ -34,7 +34,7 @@ export function Header({
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="text-sm font-bold tracking-tight text-ink">
           {name || 'Francisco'}
-          <span className="text-accent">.</span>
+          <span className="text-accent-soft">.</span>
         </a>
 
         <div className="flex items-center gap-6">
@@ -46,7 +46,7 @@ export function Header({
               <li key={section}>
                 <a
                   href={`#${section}`}
-                  className="text-sm text-ink-muted transition hover:text-accent"
+                  className="text-sm text-ink-muted transition hover:text-accent-soft"
                 >
                   {t(`nav.${section}`)}
                 </a>

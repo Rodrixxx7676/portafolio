@@ -70,7 +70,7 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
               ref={closeButtonRef}
               type="button"
               onClick={close}
-              className="rounded-lg border border-line px-3 py-1.5 text-sm text-ink-muted transition hover:border-accent hover:text-accent"
+              className="rounded-lg border border-line px-3 py-1.5 text-sm text-ink-muted transition hover:border-accent-soft hover:text-accent-soft"
             >
               ✕ {t('modal.close')}
             </button>
@@ -102,7 +102,7 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
                   href={documentation.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-base-950 transition hover:bg-accent-strong"
+                  className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
                 >
                   ▶ {t('modal.viewDemo')}
                   <span aria-hidden="true">↗</span>
@@ -113,7 +113,7 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
                   href={documentation.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+                  className="flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
                 >
                   {'< >'} {t('modal.viewRepo')}
                   <span aria-hidden="true">↗</span>

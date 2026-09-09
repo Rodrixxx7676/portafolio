@@ -17,7 +17,7 @@ export function SectionShell({
       <div className="mb-10">
         <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
           {title}
-          <span className="text-accent">.</span>
+          <span className="text-accent-soft">.</span>
         </h2>
         {subtitle ? <p className="mt-2 text-sm text-ink-muted">{subtitle}</p> : null}
         <div className="mt-4 h-px w-16 bg-accent" />

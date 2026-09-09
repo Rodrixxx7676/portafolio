@@ -28,10 +28,10 @@ export function ProjectCard({
         }
       }}
       aria-label={`${project.title}: ${t('projects.openDoc')}`}
-      className="group flex cursor-pointer flex-col rounded-2xl border border-line bg-base-900 p-6 transition hover:-translate-y-1 hover:border-accent hover:shadow-lg hover:shadow-accent/10"
+      className="group flex cursor-pointer flex-col rounded-2xl border border-line bg-base-900 p-6 transition hover:-translate-y-1 hover:border-accent-soft hover:shadow-lg hover:shadow-accent/10"
     >
       <div className="mb-3 flex items-start justify-between gap-3">
-        <h3 className="text-lg font-semibold text-ink transition group-hover:text-accent">
+        <h3 className="text-lg font-semibold text-ink transition group-hover:text-accent-soft">
           {project.title}
         </h3>
         <span className="shrink-0 rounded-full border border-line px-2.5 py-0.5 text-[11px] uppercase tracking-wide text-ink-muted">
@@ -45,7 +45,7 @@ export function ProjectCard({
       {project.hasDemo || project.hasRepo ? (
         <ul className="mt-4 flex flex-wrap gap-2">
           {project.hasDemo ? (
-            <li className="rounded-full bg-accent/15 px-2.5 py-1 text-[11px] font-semibold text-accent">
+            <li className="rounded-full bg-accent/15 px-2.5 py-1 text-[11px] font-semibold text-accent-soft">
               ▶ {t('projects.badge.demo')}
             </li>
           ) : null}
@@ -88,7 +88,7 @@ export function ProjectCard({
         La llamada a la acción es permanente, no aparece solo al pasar el mouse:
         en una pantalla táctil ese estado no existe y la tarjeta se quedaría muda.
       */}
-      <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-accent">
+      <p className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-accent-soft">
         {t('projects.openDoc')}
         <span aria-hidden="true" className="transition group-hover:translate-x-1">
           →

@@ -69,8 +69,8 @@ function FilterButton({
       aria-pressed={isActive}
       className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition ${
         isActive
-          ? 'border-accent bg-accent text-base-950'
-          : 'border-line text-ink-muted hover:border-accent hover:text-accent'
+          ? 'border-accent bg-accent text-ink'
+          : 'border-line text-ink-muted hover:border-accent-soft hover:text-accent-soft'
       }`}
     >
       {label}

@@ -37,7 +37,7 @@ function TimelineColumn({
 }): JSX.Element {
   return (
     <div>
-      <h3 className="mb-6 text-sm font-semibold uppercase tracking-[0.15em] text-accent">
+      <h3 className="mb-6 text-sm font-semibold uppercase tracking-[0.15em] text-accent-soft">
         {title}
       </h3>
       <ol className="relative border-l border-line pl-6">
@@ -46,7 +46,7 @@ function TimelineColumn({
             <span className="absolute -left-[5px] mt-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
             <p className="text-xs text-ink-muted">{item.period}</p>
             <h4 className="mt-1 font-semibold text-ink">{item.role}</h4>
-            <p className="text-sm text-accent">{item.organization}</p>
+            <p className="text-sm text-accent-soft">{item.organization}</p>
             <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.description}</p>
             {item.tags.length > 0 ? (
               <ul className="mt-3 flex flex-wrap gap-2">

@@ -1,31 +1,98 @@
 [
   {
-    "id": "frontend",
-    "name": { "es": "Frontend", "en": "Frontend" },
-    "skills": [
-      { "name": "JavaScript", "level": 4 },
-      { "name": "HTML & CSS", "level": 4 },
-      { "name": "React", "level": 3 },
-      { "name": "Flutter / Dart", "level": 3 }
-    ]
-  },
-  {
     "id": "backend",
-    "name": { "es": "Backend", "en": "Backend" },
+    "name": {
+      "es": "Desarrollo",
+      "en": "Development"
+    },
     "skills": [
-      { "name": "Node.js & Express", "level": 4 },
-      { "name": "ASP.NET Core / C#", "level": 3 },
-      { "name": "PostgreSQL", "level": 3 },
-      { "name": "Oracle", "level": 3 }
+      {
+        "name": ".NET / C#",
+        "level": 4
+      },
+      {
+        "name": "JavaScript",
+        "level": 4
+      },
+      {
+        "name": "Node.js & Express",
+        "level": 3
+      },
+      {
+        "name": "React",
+        "level": 3
+      }
     ]
   },
   {
-    "id": "cloud",
-    "name": { "es": "Cloud y herramientas", "en": "Cloud & tooling" },
+    "id": "datos",
+    "name": {
+      "es": "Datos",
+      "en": "Data"
+    },
     "skills": [
-      { "name": "AWS Elastic Beanstalk", "level": 3 },
-      { "name": "Git & GitHub", "level": 4 },
-      { "name": "Linux", "level": 3 }
+      {
+        "name": "Oracle",
+        "level": 4
+      },
+      {
+        "name": "Modelado de datos",
+        "level": 4
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 3
+      },
+      {
+        "name": "Bases de datos relacionales",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "id": "practicas",
+    "name": {
+      "es": "Prácticas y herramientas",
+      "en": "Practices & tooling"
+    },
+    "skills": [
+      {
+        "name": "Automatización de procesos",
+        "level": 4
+      },
+      {
+        "name": "Arquitectura de software (OOP)",
+        "level": 4
+      },
+      {
+        "name": "Git & GitHub",
+        "level": 4
+      },
+      {
+        "name": "AWS Elastic Beanstalk",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "id": "idiomas",
+    "name": {
+      "es": "Idiomas",
+      "en": "Languages"
+    },
+    "skills": [
+      {
+        "name": "Español — nativo",
+        "level": 5
+      },
+      {
+        "name": "Inglés — intermedio",
+        "level": 3
+      },
+      {
+        "name": "Alemán — básico",
+        "level": 2
+      }
     ]
   }
 ]

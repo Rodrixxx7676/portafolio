@@ -13,7 +13,7 @@ export function SkillsSection({ categories }: { categories: SkillCategory[] }): 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {categories.map((category) => (
           <div key={category.id} className="rounded-2xl border border-line bg-base-900 p-6">
-            <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.15em] text-accent">
+            <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.15em] text-accent-soft">
               {tx(category.name)}
             </h3>
             <ul className="space-y-4">

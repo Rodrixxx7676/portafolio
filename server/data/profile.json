@@ -1,22 +1,22 @@
 {
   "name": "Francisco Ponte",
   "headline": {
-    "es": "Desarrollador de Software",
-    "en": "Software Developer"
+    "es": "Desarrollador .NET y estudiante de ingeniería",
+    "en": ".NET Developer and engineering student"
   },
   "about": {
-    "es": "Desarrollador enfocado en construir aplicaciones web mantenibles, con una arquitectura clara y desplegadas en la nube. Este portafolio está construido con React, Express y TypeScript sobre AWS Elastic Beanstalk, siguiendo una arquitectura Model-View-ViewModel.",
-    "en": "Developer focused on building maintainable web applications with a clear architecture, deployed to the cloud. This portfolio is built with React, Express and TypeScript on AWS Elastic Beanstalk, following a Model-View-ViewModel architecture."
+    "es": "Estudiante universitario con experiencia desarrollando aplicaciones e integraciones dentro del ecosistema .NET (C#), automatizando flujos corporativos y gestionando bases de datos relacionales. Apasionado por la arquitectura de software, las buenas prácticas de programación orientada a objetos y la creación de sistemas escalables y eficientes.",
+    "en": "University student with experience building applications and integrations within the .NET (C#) ecosystem, automating corporate workflows and managing relational databases. Passionate about software architecture, object-oriented best practices and building scalable, efficient systems."
   },
   "location": {
-    "es": "Chile",
-    "en": "Chile"
+    "es": "Perú",
+    "en": "Peru"
   },
   "email": "rodripontevillarroel@gmail.com",
   "linkedinUrl": "https://www.linkedin.com/in/rodrigo-ponte-baa1a7253/",
   "githubUrl": "https://github.com/Rodrixxx7676",
   "resumeUrl": {
-    "es": "",
-    "en": ""
+    "es": "/cv/francisco-ponte-cv.pdf",
+    "en": "/cv/francisco-ponte-cv.pdf"
   }
 }
