@@ -1,1 +1,78 @@
-[]
+[
+  {
+    "id": "carso-soporte",
+    "kind": "experiencia",
+    "role": {
+      "es": "Soporte Técnico de Sistemas",
+      "en": "IT Systems Support"
+    },
+    "organization": "Grupo Carso",
+    "startDate": "2026-03",
+    "endDate": null,
+    "description": {
+      "es": "Resuelvo más de 80 incidencias tecnológicas al mes, desde fallos de infraestructura hasta configuraciones críticas de red, sosteniendo la continuidad operativa del área de sistemas. Desarrollo scripts de automatización interna que optimizan la sincronización de herramientas corporativas, y me encargo del monitoreo y el mantenimiento preventivo de las estaciones de trabajo.",
+      "en": "I resolve more than 80 technology incidents a month, from infrastructure failures to critical network configurations, keeping the systems area running. I build internal automation scripts that streamline the synchronisation of corporate tools, and I handle monitoring and preventive maintenance of workstations."
+    },
+    "tags": [
+      "Infraestructura",
+      "Automatización",
+      "Redes",
+      "ITIL"
+    ]
+  },
+  {
+    "id": "carso-operaciones",
+    "kind": "experiencia",
+    "role": {
+      "es": "Practicante de Logística y Operaciones",
+      "en": "Logistics & Operations Intern"
+    },
+    "organization": "Grupo Carso",
+    "startDate": "2025-10",
+    "endDate": "2026-02",
+    "description": {
+      "es": "Elaboré reportes de rendimiento operativo y di soporte a la supervisión técnica del área apoyándome en el ecosistema de Office. Participé en el modelado de los flujos de trabajo iniciales para optimizar los recursos logísticos.",
+      "en": "I produced operational performance reports and supported the area's technical supervision using the Office ecosystem. I took part in modelling the initial workflows that optimised logistics resources."
+    },
+    "tags": [
+      "Reportes",
+      "Office",
+      "Modelado de procesos"
+    ]
+  },
+  {
+    "id": "cientifica-del-sur",
+    "kind": "educacion",
+    "role": {
+      "es": "Ingeniería de Sistemas",
+      "en": "Systems Engineering"
+    },
+    "organization": "Universidad Científica del Sur",
+    "startDate": "2023-03",
+    "endDate": null,
+    "description": {
+      "es": "Formación en ingeniería de sistemas, con énfasis en arquitectura de software, bases de datos y desarrollo de aplicaciones.",
+      "en": "Systems engineering degree, with a focus on software architecture, databases and application development."
+    },
+    "tags": []
+  },
+  {
+    "id": "itil-v4",
+    "kind": "educacion",
+    "role": {
+      "es": "Certificación ITIL V4",
+      "en": "ITIL V4 Certification"
+    },
+    "organization": "EDUCBA",
+    "startDate": "2026-01",
+    "endDate": "2026-01",
+    "description": {
+      "es": "Marco de gestión de servicios de TI: ciclo de vida del servicio, gestión de incidencias y mejora continua. Es el estándar con el que trabaja a diario un área de soporte.",
+      "en": "IT service management framework: service lifecycle, incident management and continual improvement. The standard an IT support area works with every day."
+    },
+    "tags": [
+      "ITIL",
+      "Gestión de servicios TI"
+    ]
+  }
+]

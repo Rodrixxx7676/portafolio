@@ -49,9 +49,14 @@ export function useProfileViewModel(locale: Locale, presentLabel: string): Profi
       kind: entry.kind,
       role: entry.role[locale],
       organization: entry.organization,
-      period: `${formatMonth(entry.startDate, locale)} — ${
-        entry.endDate ? formatMonth(entry.endDate, locale) : presentLabel
-      }`,
+      // Una certificación se obtiene en una fecha, no a lo largo de un periodo:
+      // cuando el inicio y el fin coinciden se muestra una sola fecha.
+      period:
+        entry.endDate === entry.startDate
+          ? formatMonth(entry.startDate, locale)
+          : `${formatMonth(entry.startDate, locale)} — ${
+              entry.endDate ? formatMonth(entry.endDate, locale) : presentLabel
+            }`,
       description: entry.description[locale],
       tags: entry.tags,
     }));
