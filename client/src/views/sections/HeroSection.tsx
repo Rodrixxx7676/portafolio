@@ -37,9 +37,9 @@ export function HeroSection({
         {canPlayHeroVideo ? (
           <video
             ref={videoRef}
-            // La saturación y el contraste devuelven al rojo la fuerza que le
-            // quitan la compresión y el velo oscuro de encima.
-            style={{ filter: 'saturate(1.65) contrast(1.15) brightness(1.05)' }}
+            // Un toque de saturación y contraste basta: el vídeo ya llega claro
+            // y con los rojos vivos, así que forzarlo solo los quemaría.
+            style={{ filter: 'saturate(1.2) contrast(1.05)' }}
             className="absolute inset-0 h-full w-full object-cover"
             src="/video/hero.mp4"
             poster="/video/hero-poster.jpg"
@@ -64,17 +64,18 @@ export function HeroSection({
         )}
 
         {/*
-          Velo para que el texto se lea. Cubre con fuerza la banda izquierda,
-          donde va la presentación, y deja el resto del vídeo casi limpio: antes
-          lo tapaba entero y el rojo se veía gris.
+          Velo suave. La pared del vídeo ya es blanca justo donde va el texto,
+          así que solo hace falta asegurar el contraste en los fotogramas con
+          más detalle; cubrirlo más apagaría la escena sin ganar legibilidad.
         */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/80 to-base-950/20"
+          className="absolute inset-0 bg-gradient-to-r from-base-950/85 via-base-950/45 to-transparent"
         />
+        {/* Cierre inferior: funde el vídeo con el papel del resto de la página. */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-base-950"
+          className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-base-950"
         />
 
         <div className="relative mx-auto w-full max-w-6xl px-6">
