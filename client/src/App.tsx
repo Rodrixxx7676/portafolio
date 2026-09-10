@@ -1,5 +1,4 @@
 import { Footer } from './views/components/Footer.js';
-import Galaxy from './views/components/Galaxy.js';
 import { Header } from './views/components/Header.js';
 import { ProjectModal } from './views/components/ProjectModal.js';
 import { AboutSection } from './views/sections/AboutSection.js';
@@ -37,28 +36,6 @@ export function App(): JSX.Element {
 
   return (
     <div className="min-h-screen">
-      {/*
-        Campo de estrellas de fondo. Va fijo y detrás de todo, y no intercepta
-        clics: el vídeo del inicio lo tapa en la primera pantalla y aparece a
-        partir de ahí. Las estrellas se apartan del cursor porque el componente
-        escucha el ratón en la ventana, no en su propio lienzo.
-      */}
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
-        <Galaxy
-          density={1.1}
-          hueShift={0}
-          saturation={0.55}
-          glowIntensity={0.35}
-          starSpeed={0.3}
-          rotationSpeed={0.06}
-          twinkleIntensity={0.5}
-          mouseInteraction
-          mouseRepulsion
-          repulsionStrength={2.5}
-          transparent
-        />
-      </div>
-
       <Header name={name} hiddenSections={[...hiddenSections]} />
 
       <main>

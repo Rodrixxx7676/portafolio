@@ -1,34 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Gideon: Asistente para macOS">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Asistente para macOS">
   <defs>
-    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1a1919"/>
-      <stop offset="55%" stop-color="#262525"/>
-      <stop offset="100%" stop-color="#3a1010"/>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0e0e"/>
+      <stop offset="45%" stop-color="#1f1414"/>
+      <stop offset="100%" stop-color="#4a0f0f"/>
     </linearGradient>
-    <radialGradient id="halo" cx="50%" cy="34%" r="52%">
-      <stop offset="0%" stop-color="#b40808" stop-opacity="0.55"/>
+    <radialGradient id="halo" cx="50%" cy="47%" r="46%">
+      <stop offset="0%" stop-color="#b40808" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#b40808" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="rejilla" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M60 0H0V60" fill="none" stroke="#f9f5f5" stroke-opacity="0.05" stroke-width="1"/>
+    <linearGradient id="pie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0e0e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0f0e0e" stop-opacity="0.95"/>
+    </linearGradient>
+    <pattern id="rejilla" width="75" height="75" patternUnits="userSpaceOnUse">
+      <path d="M75 0H0V75" fill="none" stroke="#f9f5f5" stroke-opacity="0.045" stroke-width="1"/>
     </pattern>
   </defs>
 
   <rect width="900" height="1200" fill="url(#fondo)"/>
   <rect width="900" height="1200" fill="url(#rejilla)"/>
-  <circle cx="450" cy="410" r="430" fill="url(#halo)"/>
+  <circle cx="450" cy="560" r="470" fill="url(#halo)"/>
 
-  <text x="70" y="150" font-family="Georgia, serif" font-size="34" fill="#e19898" letter-spacing="10">06</text>
-  <rect x="70" y="180" width="84" height="4" fill="#b40808"/>
-
-  <text x="70" y="700" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#f9f5f5">Gideon</text>
-  <text x="70" y="768" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#b5aeae">Asistente para macOS</text>
-
-  <g font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#e19898">
-    <text x="70" y="860">Shell</text>
-    <text x="370" y="860">Automatización</text>
+  <!-- Motivo propio del proyecto, centrado para sobrevivir al recorte. -->
+  <g>
+    <rect x="230" y="415" width="440" height="290" rx="20" fill="#0f0e0e" stroke="#424141" stroke-width="3"/>
+    <rect x="230" y="415" width="440" height="52" rx="20" fill="#262525"/>
+    <rect x="230" y="450" width="440" height="17" fill="#262525"/>
+    <circle cx="266" cy="441" r="9" fill="#b40808"/>
+    <circle cx="296" cy="441" r="9" fill="#514f4f"/>
+    <circle cx="326" cy="441" r="9" fill="#514f4f"/>
+    <text x="266" y="525" font-family="'SF Mono', Menlo, monospace" font-size="26" fill="#e19898">$ gideon --status</text>
+    <rect x="266" y="555" width="230" height="9" rx="4" fill="#514f4f"/>
+    <rect x="266" y="585" width="310" height="9" rx="4" fill="#514f4f" opacity="0.7"/>
+    <rect x="266" y="615" width="170" height="9" rx="4" fill="#514f4f" opacity="0.5"/>
+    <rect x="266" y="648" width="20" height="26" fill="#b40808"/>
   </g>
 
-  <rect x="70" y="1090" width="760" height="1" fill="#424141"/>
-  <text x="70" y="1140" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#b5aeae">Francisco Ponte</text>
+  <!-- El degradado inferior asienta la etiqueta que dibuja la galería encima. -->
+  <rect x="0" y="880" width="900" height="320" fill="url(#pie)"/>
+  <text x="450" y="1010" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="27" letter-spacing="4" fill="#b5aeae">SHELL · MACOS</text>
+  <rect x="410" y="1050" width="80" height="3" fill="#b40808"/>
 </svg>

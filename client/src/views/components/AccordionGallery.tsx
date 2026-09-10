@@ -235,7 +235,9 @@ export function AccordionGallery({
                   mediaRefs.current[i] = el;
                 }}
               >
-                <img src={item.image} alt={item.alt ?? item.label} draggable="false" loading="lazy" />
+                {/* Sin carga diferida: son ilustraciones de un par de kilobytes y
+                    diferirlas solo consigue que el panel abierto salga vacío. */}
+                <img src={item.image} alt={item.alt ?? item.label} draggable="false" />
               </span>
               {showLabels ? (
                 <span className="ag-panel__label" aria-hidden="true">

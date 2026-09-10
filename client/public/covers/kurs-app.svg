@@ -1,35 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="KURS App: Automatización">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Automatización de flujos">
   <defs>
-    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1a1919"/>
-      <stop offset="55%" stop-color="#262525"/>
-      <stop offset="100%" stop-color="#3a1010"/>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0e0e"/>
+      <stop offset="45%" stop-color="#1f1414"/>
+      <stop offset="100%" stop-color="#4a0f0f"/>
     </linearGradient>
-    <radialGradient id="halo" cx="50%" cy="34%" r="52%">
-      <stop offset="0%" stop-color="#b40808" stop-opacity="0.55"/>
+    <radialGradient id="halo" cx="50%" cy="47%" r="46%">
+      <stop offset="0%" stop-color="#b40808" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#b40808" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="rejilla" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M60 0H0V60" fill="none" stroke="#f9f5f5" stroke-opacity="0.05" stroke-width="1"/>
+    <linearGradient id="pie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0e0e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0f0e0e" stop-opacity="0.95"/>
+    </linearGradient>
+    <pattern id="rejilla" width="75" height="75" patternUnits="userSpaceOnUse">
+      <path d="M75 0H0V75" fill="none" stroke="#f9f5f5" stroke-opacity="0.045" stroke-width="1"/>
     </pattern>
   </defs>
 
   <rect width="900" height="1200" fill="url(#fondo)"/>
   <rect width="900" height="1200" fill="url(#rejilla)"/>
-  <circle cx="450" cy="410" r="430" fill="url(#halo)"/>
+  <circle cx="450" cy="560" r="470" fill="url(#halo)"/>
 
-  <text x="70" y="150" font-family="Georgia, serif" font-size="34" fill="#e19898" letter-spacing="10">05</text>
-  <rect x="70" y="180" width="84" height="4" fill="#b40808"/>
-
-  <text x="70" y="700" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#f9f5f5">KURS App</text>
-  <text x="70" y="768" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#b5aeae">Automatización</text>
-
-  <g font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#e19898">
-    <text x="70" y="860">Blazor</text>
-    <text x="370" y="860">.NET</text>
-    <text x="70" y="912">PostgreSQL</text>
+  <!-- Motivo propio del proyecto, centrado para sobrevivir al recorte. -->
+  <g>
+    <g stroke="#e19898" stroke-width="2.5" opacity="0.55" fill="none">
+      <path d="M300 420 L450 560 L600 420"/>
+      <path d="M300 700 L450 560 L600 700"/>
+      <path d="M300 420 L300 700"/>
+      <path d="M600 420 L600 700"/>
+    </g>
+    <circle cx="450" cy="560" r="46" fill="#b40808"/>
+    <circle cx="450" cy="560" r="70" fill="none" stroke="#f9f5f5" stroke-width="2.5" opacity="0.75"/>
+    <circle cx="300" cy="420" r="26" fill="#dc6060"/>
+    <circle cx="600" cy="420" r="26" fill="#dc6060"/>
+    <circle cx="300" cy="700" r="26" fill="#e19898" opacity="0.85"/>
+    <circle cx="600" cy="700" r="26" fill="#e19898" opacity="0.85"/>
   </g>
 
-  <rect x="70" y="1090" width="760" height="1" fill="#424141"/>
-  <text x="70" y="1140" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#b5aeae">Francisco Ponte</text>
+  <!-- El degradado inferior asienta la etiqueta que dibuja la galería encima. -->
+  <rect x="0" y="880" width="900" height="320" fill="url(#pie)"/>
+  <text x="450" y="1010" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="27" letter-spacing="4" fill="#b5aeae">BLAZOR · .NET · POSTGRESQL</text>
+  <rect x="410" y="1050" width="80" height="3" fill="#b40808"/>
 </svg>
