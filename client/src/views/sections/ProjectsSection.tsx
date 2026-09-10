@@ -78,8 +78,10 @@ export function ProjectsSection({
               defaultIndex={0}
               onActiveChange={setActiveIndex}
               onSelect={handleSelect}
-              height={420}
+              height={540}
               expandRatio={projects.length > 1 ? 0.52 : 0.9}
+              gap={12}
+              radius={18}
               trigger="hover"
             />
 

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="KURS App: Automatización">
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1919"/>
+      <stop offset="55%" stop-color="#262525"/>
+      <stop offset="100%" stop-color="#3a1010"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="34%" r="52%">
+      <stop offset="0%" stop-color="#b40808" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#b40808" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="rejilla" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#f9f5f5" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#fondo)"/>
+  <rect width="900" height="1200" fill="url(#rejilla)"/>
+  <circle cx="450" cy="410" r="430" fill="url(#halo)"/>
+
+  <text x="70" y="150" font-family="Georgia, serif" font-size="34" fill="#e19898" letter-spacing="10">05</text>
+  <rect x="70" y="180" width="84" height="4" fill="#b40808"/>
+
+  <text x="70" y="700" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#f9f5f5">KURS App</text>
+  <text x="70" y="768" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#b5aeae">Automatización</text>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#e19898">
+    <text x="70" y="860">Blazor</text>
+    <text x="370" y="860">.NET</text>
+    <text x="70" y="912">PostgreSQL</text>
+  </g>
+
+  <rect x="70" y="1090" width="760" height="1" fill="#424141"/>
+  <text x="70" y="1140" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#b5aeae">Francisco Ponte</text>
+</svg>

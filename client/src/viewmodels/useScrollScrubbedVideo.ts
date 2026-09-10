@@ -34,6 +34,7 @@ export function useScrollScrubbedVideo(): ScrollScrubbedVideo {
     let currentTime = 0;
     let frame = 0;
     let running = true;
+    let lastTickAt = 0;
 
     const computeTarget = (): void => {
       const duration = video.duration;
@@ -50,6 +51,7 @@ export function useScrollScrubbedVideo(): ScrollScrubbedVideo {
 
     const tick = (): void => {
       if (!running) return;
+      lastTickAt = performance.now();
       const distance = targetTime - currentTime;
 
       // Por debajo de un cuadro de vídeo no vale la pena pedir otro salto:
@@ -61,7 +63,18 @@ export function useScrollScrubbedVideo(): ScrollScrubbedVideo {
       frame = requestAnimationFrame(tick);
     };
 
-    const onScroll = (): void => computeTarget();
+    const onScroll = (): void => {
+      computeTarget();
+
+      // Respaldo cuando el bucle de animación no está corriendo: los
+      // navegadores lo congelan en pestañas de segundo plano y lo limitan en
+      // equipos con poca batería. Sin esto, el vídeo se quedaría clavado en el
+      // fotograma donde se detuvo y no volvería a seguir al scroll.
+      if (performance.now() - lastTickAt > 200) {
+        currentTime = targetTime;
+        if (video.readyState >= 2) video.currentTime = currentTime;
+      }
+    };
     const onResize = (): void => computeTarget();
     const onLoaded = (): void => {
       computeTarget();

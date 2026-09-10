@@ -38,22 +38,23 @@ export function App(): JSX.Element {
   return (
     <div className="min-h-screen">
       {/*
-        Campo de estrellas de fondo. Va fijo y detrás de todo, sin recibir
+        Campo de estrellas de fondo. Va fijo y detrás de todo, y no intercepta
         clics: el vídeo del inicio lo tapa en la primera pantalla y aparece a
-        partir de ahí. La interacción con el ratón queda desactivada porque el
-        lienzo no recibe eventos y calcularla sería trabajo tirado.
+        partir de ahí. Las estrellas se apartan del cursor porque el componente
+        escucha el ratón en la ventana, no en su propio lienzo.
       */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
         <Galaxy
-          density={0.8}
+          density={1.1}
           hueShift={0}
-          saturation={0.35}
-          glowIntensity={0.25}
-          starSpeed={0.25}
-          rotationSpeed={0.05}
-          twinkleIntensity={0.4}
-          mouseInteraction={false}
-          mouseRepulsion={false}
+          saturation={0.55}
+          glowIntensity={0.35}
+          starSpeed={0.3}
+          rotationSpeed={0.06}
+          twinkleIntensity={0.5}
+          mouseInteraction
+          mouseRepulsion
+          repulsionStrength={2.5}
           transparent
         />
       </div>

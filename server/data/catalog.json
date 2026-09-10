@@ -10,6 +10,73 @@
     "status": "produccion",
     "repo": "Rodrixxx7676/Clack",
     "demoUrl": "https://clack.kursperu.duckdns.org",
+    "coverImage": "/covers/clack.svg",
     "featured": true
+  },
+  {
+    "id": "kurs-seenode",
+    "title": "KURS",
+    "summary": {
+      "es": "Web oficial de KURS, desplegada en producción sobre Seenode. Node.js y Express con PostgreSQL detrás.",
+      "en": "KURS official website, running in production on Seenode. Node.js and Express backed by PostgreSQL."
+    },
+    "tags": ["Node.js", "Express", "PostgreSQL"],
+    "status": "produccion",
+    "repo": "Rodrixxx7676/kurs-seenode",
+    "demoUrl": "https://kurs-seenode.seenode.app",
+    "coverImage": "/covers/kurs-seenode.svg",
+    "featured": true
+  },
+  {
+    "id": "sedix",
+    "title": "Sedix",
+    "summary": {
+      "es": "Aplicación de metas de ahorro personal: el usuario fija objetivos y sigue su progreso. Flutter Web contra una API en ASP.NET Core 8 con PostgreSQL.",
+      "en": "Personal savings goals app: users set targets and track their progress. Flutter Web against an ASP.NET Core 8 API with PostgreSQL."
+    },
+    "tags": ["Flutter", "Dart", "ASP.NET Core", "PostgreSQL"],
+    "status": "activo",
+    "repo": "Rodrixxx7676/sedix",
+    "coverImage": "/covers/sedix.svg",
+    "featured": false
+  },
+  {
+    "id": "vortexfit",
+    "title": "VortexFit",
+    "summary": {
+      "es": "Sistema de gestión para gimnasios: socios, membresías y rutinas. ASP.NET Core MVC sobre Oracle 23ai.",
+      "en": "Gym management system covering members, memberships and routines. ASP.NET Core MVC on top of Oracle 23ai."
+    },
+    "tags": ["ASP.NET Core", "C#", "MVC", "Oracle"],
+    "status": "activo",
+    "repo": "Rodrixxx7676/vortexfit",
+    "coverImage": "/covers/vortexfit.svg",
+    "featured": false
+  },
+  {
+    "id": "kurs",
+    "title": "KURS App",
+    "summary": {
+      "es": "Aplicativo web de servicios de automatización y desarrollo para medianas empresas, construido con Blazor sobre .NET.",
+      "en": "Web application for automation and development services aimed at mid-sized companies, built with Blazor on .NET."
+    },
+    "tags": ["Blazor", ".NET", "C#", "PostgreSQL"],
+    "status": "activo",
+    "repo": "Rodrixxx7676/kurs",
+    "coverImage": "/covers/kurs-app.svg",
+    "featured": false
+  },
+  {
+    "id": "gideon",
+    "title": "Gideon",
+    "summary": {
+      "es": "Asistente personal para macOS con permisos de administrador, pensado para automatizar tareas del sistema.",
+      "en": "Personal assistant for macOS with administrator privileges, built to automate system tasks."
+    },
+    "tags": ["Shell", "macOS", "Automatización"],
+    "status": "experimento",
+    "repo": "Rodrixxx7676/gideon",
+    "coverImage": "/covers/gideon.svg",
+    "featured": false
   }
 ]

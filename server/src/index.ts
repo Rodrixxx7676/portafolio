@@ -19,8 +19,8 @@ app.use(
         // El kit de Font Awesome se sirve desde su propio dominio y, una vez
         // cargado, pide sus hojas de estilo y tipografías a ka-f.fontawesome.com.
         scriptSrc: ["'self'", 'https://kit.fontawesome.com'],
-        styleSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com'],
-        fontSrc: ["'self'", 'data:', 'https://ka-f.fontawesome.com'],
+        styleSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'],
+        fontSrc: ["'self'", 'data:', 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com'],
         connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
         frameAncestors: ["'self'"],
         // Solo se exige HTTPS cuando el entorno realmente lo sirve. Un entorno

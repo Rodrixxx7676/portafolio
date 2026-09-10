@@ -25,13 +25,24 @@
   /* Hover de los botones: se oscurece en vez de aclararse, porque aclarar el
      rojo dejaría el texto blanco por debajo del contraste mínimo. */
   --color-accent-strong: #8f0606;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Serif de contraste para los títulos: da el aire editorial que una
+     interfaz hecha solo de sans no consigue. */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
 }
 
 html {
   scroll-behavior: smooth;
   /* El header fijo no debe tapar el título de la sección al navegar por anclas. */
   scroll-padding-top: 5rem;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
 }
 
 body {

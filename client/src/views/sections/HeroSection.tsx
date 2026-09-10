@@ -28,6 +28,9 @@ export function HeroSection({
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <video
           ref={videoRef}
+          // La saturación y el contraste devuelven al rojo la fuerza que le
+          // quitan la compresión y el velo oscuro de encima.
+          style={{ filter: 'saturate(1.65) contrast(1.15) brightness(1.05)' }}
           className="absolute inset-0 h-full w-full object-cover"
           src="/video/hero.mp4"
           poster="/video/hero-poster.jpg"
@@ -39,10 +42,14 @@ export function HeroSection({
           tabIndex={-1}
         />
 
-        {/* Velo oscuro: sin él, el texto blanco se pierde sobre las zonas claras. */}
+        {/*
+          Velo para que el texto se lea. Cubre con fuerza la banda izquierda,
+          donde va la presentación, y deja el resto del vídeo casi limpio: antes
+          lo tapaba entero y el rojo se veía gris.
+        */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/85 to-base-950/40"
+          className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/55 to-transparent"
         />
         <div
           aria-hidden="true"
