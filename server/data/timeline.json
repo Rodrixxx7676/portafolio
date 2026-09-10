@@ -3,8 +3,8 @@
     "id": "carso-soporte",
     "kind": "experiencia",
     "role": {
-      "es": "Soporte Técnico de Sistemas",
-      "en": "IT Systems Support"
+      "es": "Auxiliar de Sistemas",
+      "en": "Systems Assistant"
     },
     "organization": "Grupo Carso",
     "startDate": "2026-03",
@@ -24,8 +24,8 @@
     "id": "carso-operaciones",
     "kind": "experiencia",
     "role": {
-      "es": "Practicante de Logística y Operaciones",
-      "en": "Logistics & Operations Intern"
+      "es": "Auxiliar Operativo",
+      "en": "Operations Assistant"
     },
     "organization": "Grupo Carso",
     "startDate": "2025-10",
@@ -44,15 +44,15 @@
     "id": "cientifica-del-sur",
     "kind": "educacion",
     "role": {
-      "es": "Ingeniería de Sistemas",
-      "en": "Systems Engineering"
+      "es": "Ingeniería Empresarial y de Sistemas",
+      "en": "Business and Systems Engineering"
     },
     "organization": "Universidad Científica del Sur",
     "startDate": "2023-03",
     "endDate": null,
     "description": {
-      "es": "Formación en ingeniería de sistemas, con énfasis en arquitectura de software, bases de datos y desarrollo de aplicaciones.",
-      "en": "Systems engineering degree, with a focus on software architecture, databases and application development."
+      "es": "Carrera que combina ingeniería de sistemas con gestión empresarial: arquitectura de software, bases de datos y modelado de procesos de negocio.",
+      "en": "A degree combining systems engineering with business management: software architecture, databases and business process modelling."
     },
     "tags": []
   },

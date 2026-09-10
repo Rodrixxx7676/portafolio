@@ -11,6 +11,10 @@
         "level": 4
       },
       {
+        "name": "TypeScript",
+        "level": 3
+      },
+      {
         "name": "JavaScript",
         "level": 4
       },
@@ -59,6 +63,10 @@
       {
         "name": "Automatización de procesos",
         "level": 4
+      },
+      {
+        "name": "n8n (automatización)",
+        "level": 3
       },
       {
         "name": "Arquitectura de software (OOP)",
