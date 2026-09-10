@@ -143,7 +143,7 @@ export function ProjectsSection({
                   <button
                     type="button"
                     onClick={() => onOpenProject(active.id, active.title)}
-                    className="mt-6 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
+                    className="mt-6 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent transition hover:bg-accent-strong"
                   >
                     {t('projects.openDoc')}
                     <i className="fa-solid fa-arrow-right ml-2" aria-hidden="true" />
@@ -174,7 +174,7 @@ function FilterButton({
       aria-pressed={isActive}
       className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition ${
         isActive
-          ? 'border-accent bg-accent text-ink'
+          ? 'border-accent bg-accent text-on-accent'
           : 'border-line text-ink-muted hover:border-accent-soft hover:text-accent-soft'
       }`}
     >

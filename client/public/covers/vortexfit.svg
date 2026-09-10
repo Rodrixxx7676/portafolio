@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Gestión de gimnasio">
   <defs>
     <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f0e0e"/>
-      <stop offset="45%" stop-color="#1f1414"/>
-      <stop offset="100%" stop-color="#4a0f0f"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fdf7f7"/>
+      <stop offset="100%" stop-color="#f3d5d5"/>
     </linearGradient>
     <radialGradient id="halo" cx="50%" cy="47%" r="46%">
-      <stop offset="0%" stop-color="#b40808" stop-opacity="0.5"/>
+      <stop offset="0%" stop-color="#b40808" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#b40808" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="pie" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f0e0e" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0f0e0e" stop-opacity="0.95"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
     </linearGradient>
     <pattern id="rejilla" width="75" height="75" patternUnits="userSpaceOnUse">
-      <path d="M75 0H0V75" fill="none" stroke="#f9f5f5" stroke-opacity="0.045" stroke-width="1"/>
+      <path d="M75 0H0V75" fill="none" stroke="#b40808" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
   </defs>
 
@@ -24,7 +24,7 @@
 
   <!-- Motivo propio del proyecto, centrado para sobrevivir al recorte. -->
   <g>
-    <rect x="330" y="535" width="240" height="50" rx="12" fill="#e19898" opacity="0.9"/>
+    <rect x="330" y="535" width="240" height="50" rx="12" fill="#b40808" opacity="0.9"/>
     <rect x="255" y="470" width="70" height="180" rx="18" fill="#b40808"/>
     <rect x="575" y="470" width="70" height="180" rx="18" fill="#b40808"/>
     <rect x="195" y="505" width="52" height="110" rx="14" fill="#dc6060" opacity="0.85"/>
@@ -35,6 +35,6 @@
   <!-- El degradado inferior asienta la etiqueta que dibuja la galería encima. -->
   <rect x="0" y="880" width="900" height="320" fill="url(#pie)"/>
   <text x="450" y="1010" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
-        font-size="27" letter-spacing="4" fill="#b5aeae">ASP.NET MVC · ORACLE 23AI</text>
+        font-size="27" letter-spacing="4" fill="#8f8686">ASP.NET MVC · ORACLE 23AI</text>
   <rect x="410" y="1050" width="80" height="3" fill="#b40808"/>
 </svg>

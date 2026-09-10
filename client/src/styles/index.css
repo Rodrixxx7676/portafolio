@@ -2,29 +2,31 @@
 
 /* Paleta y tipografía del sitio, expuestas como tokens de Tailwind v4. */
 /*
- * Paleta rojo, blanco y negro.
+ * Paleta blanca y roja.
  *
- * El rojo de marca (#b40808) es demasiado oscuro para leerse sobre fondo negro:
- * el contraste queda en 2.2 sobre 1, muy por debajo del mínimo de 4.5 que exige
- * la norma de accesibilidad. Por eso se separa en dos papeles:
- *   - `accent`      pinta superficies (botones, barras), siempre con texto claro
- *                   encima: blanco sobre ese rojo da 6.5 sobre 1.
- *   - `accent-soft` es el rojo que sí se lee como texto sobre negro (6.7 a 1).
- * Confundirlos vuelve el texto ilegible, así que no son intercambiables.
+ * Sobre fondo claro, el rojo de marca (#b40808) sí se lee como texto: da 7 a 1
+ * sobre blanco, muy por encima del mínimo de 4.5 que exige la norma. Por eso
+ * aquí `accent` sirve tanto para texto como para superficies, al revés de lo
+ * que ocurría sobre negro.
+ *
+ * La única regla que no se puede saltar: sobre una superficie roja el texto va
+ * en `on-accent` (blanco, 7 a 1). La tinta oscura sobre ese rojo se queda en
+ * 2.5 a 1 y resulta ilegible.
  */
 @theme {
-  --color-base-950: #1a1919;
-  --color-base-900: #262525;
-  --color-base-800: #343333;
-  --color-base-700: #514f4f;
-  --color-line: #424141;
-  --color-ink: #f9f5f5;
-  --color-ink-muted: #b5aeae;
+  --color-base-950: #ffffff;
+  --color-base-900: #f9f5f5;
+  --color-base-800: #f5eaea;
+  --color-base-700: #eccbcb;
+  --color-line: #e4dada;
+  --color-ink: #1a1919;
+  --color-ink-muted: #514f4f;
   --color-accent: #b40808;
-  --color-accent-soft: #e19898;
-  /* Hover de los botones: se oscurece en vez de aclararse, porque aclarar el
-     rojo dejaría el texto blanco por debajo del contraste mínimo. */
+  --color-accent-soft: #b40808;
+  /* Hover de los botones: se oscurece, nunca se aclara. */
   --color-accent-strong: #8f0606;
+  /* Texto y iconos que van encima del rojo. */
+  --color-on-accent: #ffffff;
   --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   /* Serif de contraste para los títulos: da el aire editorial que una
      interfaz hecha solo de sans no consigue. */

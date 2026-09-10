@@ -33,7 +33,7 @@ export function ContactSection({
         {profile?.email ? (
           <a
             href={`mailto:${profile.email}`}
-            className="flex items-center gap-2.5 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
+            className="flex items-center gap-2.5 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent transition hover:bg-accent-strong"
           >
             <i className="fa-solid fa-envelope" aria-hidden="true" />
             {t('contact.email')}

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { useLocale } from '../../viewmodels/useLocale.js';
+import { BubbleMenu, type BubbleMenuItem } from './BubbleMenu.js';
 import { LanguageToggle } from './LanguageToggle.js';
 
 const SECTIONS = ['projects', 'about', 'experience', 'skills', 'contact'] as const;
@@ -7,7 +8,23 @@ const SECTIONS = ['projects', 'about', 'experience', 'skills', 'contact'] as con
 /** Secciones que se ocultan cuando aún no tienen contenido cargado. */
 type OptionalSection = 'experience' | 'skills';
 
-/** Barra superior fija con navegación por anclas y selector de idioma. */
+/**
+ * Inclinación y color de cada píldora del menú.
+ *
+ * Los tonos van del rojo de marca a sus versiones aclaradas, en lugar del
+ * arcoíris que trae el componente de fábrica: en un sitio de dos colores, cinco
+ * colores distintos en el menú desmontan la identidad. Sobre todos ellos el
+ * texto va en blanco.
+ */
+const ESTILO_POR_SECCION: Record<(typeof SECTIONS)[number], { rotation: number; bg: string }> = {
+  projects: { rotation: -8, bg: '#b40808' },
+  about: { rotation: 8, bg: '#8f0606' },
+  experience: { rotation: -6, bg: '#c81b1b' },
+  skills: { rotation: 8, bg: '#8f0606' },
+  contact: { rotation: -8, bg: '#b40808' },
+};
+
+/** Barra superior: identidad, cambio de idioma y menú de burbujas. */
 export function Header({
   name,
   hiddenSections = [],
@@ -16,46 +33,39 @@ export function Header({
   hiddenSections?: OptionalSection[];
 }): JSX.Element {
   const { t } = useLocale();
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = (): void => setIsScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  const items = useMemo<BubbleMenuItem[]>(
+    () =>
+      SECTIONS.filter((section) => !hiddenSections.includes(section as OptionalSection)).map(
+        (section) => {
+          const estilo = ESTILO_POR_SECCION[section];
+          return {
+            label: t(`nav.${section}`),
+            href: `#${section}`,
+            ariaLabel: t(`nav.${section}`),
+            rotation: estilo.rotation,
+            hoverStyles: { bgColor: estilo.bg, textColor: '#ffffff' },
+          };
+        },
+      ),
+    // `t` cambia con el idioma, así que las etiquetas se rehacen solas.
+    [t, hiddenSections],
+  );
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-40 transition ${
-        isScrolled ? 'border-b border-line bg-base-950/90 backdrop-blur' : 'bg-transparent'
-      }`}
-    >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <BubbleMenu
+      logo={
         <a href="#top" className="text-sm font-bold tracking-tight text-ink">
           {name || 'Francisco'}
-          <span className="text-accent-soft">.</span>
+          <span className="text-accent">.</span>
         </a>
-
-        <div className="flex items-center gap-6">
-          {/* En móvil la navegación se resuelve haciendo scroll, no con menú. */}
-          <ul className="hidden items-center gap-6 md:flex">
-            {SECTIONS.filter(
-              (section) => !hiddenSections.includes(section as OptionalSection),
-            ).map((section) => (
-              <li key={section}>
-                <a
-                  href={`#${section}`}
-                  className="text-sm text-ink-muted transition hover:text-accent-soft"
-                >
-                  {t(`nav.${section}`)}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <LanguageToggle />
-        </div>
-      </nav>
-    </header>
+      }
+      items={items}
+      aside={<LanguageToggle />}
+      menuAriaLabel={t('nav.menu')}
+      menuBg="#ffffff"
+      menuContentColor="#1a1919"
+      useFixedPosition
+    />
   );
 }

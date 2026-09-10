@@ -70,7 +70,7 @@ export function HeroSection({
         */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/55 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/80 to-base-950/20"
         />
         <div
           aria-hidden="true"
@@ -90,7 +90,7 @@ export function HeroSection({
           <div className="mt-9 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
+              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent transition hover:bg-accent-strong"
             >
               {t('hero.cta.projects')}
             </a>

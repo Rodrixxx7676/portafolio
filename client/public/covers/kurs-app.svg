@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Automatización de flujos">
   <defs>
     <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f0e0e"/>
-      <stop offset="45%" stop-color="#1f1414"/>
-      <stop offset="100%" stop-color="#4a0f0f"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fdf7f7"/>
+      <stop offset="100%" stop-color="#f3d5d5"/>
     </linearGradient>
     <radialGradient id="halo" cx="50%" cy="47%" r="46%">
-      <stop offset="0%" stop-color="#b40808" stop-opacity="0.5"/>
+      <stop offset="0%" stop-color="#b40808" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#b40808" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="pie" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f0e0e" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0f0e0e" stop-opacity="0.95"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
     </linearGradient>
     <pattern id="rejilla" width="75" height="75" patternUnits="userSpaceOnUse">
-      <path d="M75 0H0V75" fill="none" stroke="#f9f5f5" stroke-opacity="0.045" stroke-width="1"/>
+      <path d="M75 0H0V75" fill="none" stroke="#b40808" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
   </defs>
 
@@ -24,23 +24,23 @@
 
   <!-- Motivo propio del proyecto, centrado para sobrevivir al recorte. -->
   <g>
-    <g stroke="#e19898" stroke-width="2.5" opacity="0.55" fill="none">
+    <g stroke="#b40808" stroke-width="2.5" opacity="0.55" fill="none">
       <path d="M300 420 L450 560 L600 420"/>
       <path d="M300 700 L450 560 L600 700"/>
       <path d="M300 420 L300 700"/>
       <path d="M600 420 L600 700"/>
     </g>
     <circle cx="450" cy="560" r="46" fill="#b40808"/>
-    <circle cx="450" cy="560" r="70" fill="none" stroke="#f9f5f5" stroke-width="2.5" opacity="0.75"/>
+    <circle cx="450" cy="560" r="70" fill="none" stroke="#1a1919" stroke-width="2.5" opacity="0.75"/>
     <circle cx="300" cy="420" r="26" fill="#dc6060"/>
     <circle cx="600" cy="420" r="26" fill="#dc6060"/>
-    <circle cx="300" cy="700" r="26" fill="#e19898" opacity="0.85"/>
-    <circle cx="600" cy="700" r="26" fill="#e19898" opacity="0.85"/>
+    <circle cx="300" cy="700" r="26" fill="#b40808" opacity="0.85"/>
+    <circle cx="600" cy="700" r="26" fill="#b40808" opacity="0.85"/>
   </g>
 
   <!-- El degradado inferior asienta la etiqueta que dibuja la galería encima. -->
   <rect x="0" y="880" width="900" height="320" fill="url(#pie)"/>
   <text x="450" y="1010" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
-        font-size="27" letter-spacing="4" fill="#b5aeae">BLAZOR · .NET · POSTGRESQL</text>
+        font-size="27" letter-spacing="4" fill="#8f8686">BLAZOR · .NET · POSTGRESQL</text>
   <rect x="410" y="1050" width="80" height="3" fill="#b40808"/>
 </svg>

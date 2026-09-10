@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Reloj mundial con husos horarios">
   <defs>
     <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f0e0e"/>
-      <stop offset="45%" stop-color="#1f1414"/>
-      <stop offset="100%" stop-color="#4a0f0f"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fdf7f7"/>
+      <stop offset="100%" stop-color="#f3d5d5"/>
     </linearGradient>
     <radialGradient id="halo" cx="50%" cy="47%" r="46%">
-      <stop offset="0%" stop-color="#b40808" stop-opacity="0.5"/>
+      <stop offset="0%" stop-color="#b40808" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#b40808" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="pie" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f0e0e" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0f0e0e" stop-opacity="0.95"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
     </linearGradient>
     <pattern id="rejilla" width="75" height="75" patternUnits="userSpaceOnUse">
-      <path d="M75 0H0V75" fill="none" stroke="#f9f5f5" stroke-opacity="0.045" stroke-width="1"/>
+      <path d="M75 0H0V75" fill="none" stroke="#b40808" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
   </defs>
 
@@ -25,10 +25,10 @@
   <!-- Escudo sobre equipos: la garantía que cubre el parque informático. -->
   <g>
     <path d="M450 330 L610 385 v130 c0 96-70 158-160 188-90-30-160-92-160-188V385 Z"
-          fill="none" stroke="#e19898" stroke-width="4" opacity="0.9"/>
+          fill="none" stroke="#b40808" stroke-width="4" opacity="0.9"/>
     <path d="M382 505 l48 48 L520 455" fill="none" stroke="#b40808" stroke-width="14"
           stroke-linecap="round" stroke-linejoin="round"/>
-    <g fill="none" stroke="#e19898" stroke-width="3" opacity="0.45">
+    <g fill="none" stroke="#b40808" stroke-width="3" opacity="0.45">
       <rect x="262" y="745" width="150" height="98" rx="8"/>
       <rect x="375" y="745" width="150" height="98" rx="8"/>
       <rect x="488" y="745" width="150" height="98" rx="8"/>
@@ -39,6 +39,6 @@
   <!-- El degradado inferior asienta la etiqueta que dibuja la galería encima. -->
   <rect x="0" y="880" width="900" height="320" fill="url(#pie)"/>
   <text x="450" y="1010" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
-        font-size="27" letter-spacing="4" fill="#b5aeae">NODE.JS · EXPRESS · MYSQL</text>
+        font-size="27" letter-spacing="4" fill="#8f8686">NODE.JS · EXPRESS · MYSQL</text>
   <rect x="410" y="1050" width="80" height="3" fill="#b40808"/>
 </svg>

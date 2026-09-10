@@ -27,7 +27,7 @@ export function StateMessage({
             <button
               type="button"
               onClick={onRetry}
-              className="mt-1 rounded-lg border border-accent-soft px-4 py-1.5 text-sm text-accent-soft transition hover:bg-accent hover:text-ink"
+              className="mt-1 rounded-lg border border-accent-soft px-4 py-1.5 text-sm text-accent-soft transition hover:bg-accent hover:text-on-accent"
             >
               {t('state.retry')}
             </button>

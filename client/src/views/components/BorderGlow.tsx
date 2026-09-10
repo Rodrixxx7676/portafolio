@@ -129,15 +129,16 @@ export function BorderGlow({
   children,
   className = '',
   edgeSensitivity = 30,
-  // Rojo aclarado: el rojo de marca es demasiado oscuro para brillar sobre negro.
-  glowColor = '0 75 62',
-  backgroundColor = '#262525',
+  // Sobre papel blanco el halo funciona con el rojo de marca, algo aclarado
+  // para que se lea como un resplandor y no como un borde macizo.
+  glowColor = '0 80 45',
+  backgroundColor = '#ffffff',
   borderRadius = 16,
   glowRadius = 40,
   glowIntensity = 1,
   coneSpread = 25,
   animated = false,
-  colors = ['#b40808', '#dc6060', '#f9f5f5'],
+  colors = ['#b40808', '#dc6060', '#e19898'],
   fillOpacity = 0.5,
 }: BorderGlowProps): JSX.Element {
   const cardRef = useRef<HTMLDivElement>(null);

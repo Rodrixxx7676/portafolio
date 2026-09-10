@@ -10,7 +10,7 @@ export function LanguageToggle(): JSX.Element {
       onClick={toggleLocale}
       aria-label={t('lang.toggle')}
       title={t('lang.toggle')}
-      className="rounded-full border border-line px-3 py-1.5 text-xs font-semibold tracking-wide text-ink-muted transition hover:border-accent-soft hover:text-accent-soft"
+      className="text-xs font-semibold tracking-wide text-ink-muted transition hover:text-accent"
     >
       <span className={locale === 'es' ? 'text-accent-soft' : ''}>ES</span>
       <span className="mx-1 text-line">/</span>

@@ -112,7 +112,7 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => AnalyticsRepository.track('demo', documentation.projectId)}
-                  className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
+                  className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-on-accent transition hover:bg-accent-strong"
                 >
                   <i className="fa-solid fa-play" aria-hidden="true" />
                   {t('modal.viewDemo')}

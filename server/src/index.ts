@@ -17,11 +17,11 @@ function paginaNoEncontrada(origin: string): string {
     <title>Página no encontrada — Francisco Ponte</title>
     <style>
       body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-             background:#1a1919; color:#f9f5f5; font-family: ui-sans-serif, system-ui, sans-serif; }
+             background:#ffffff; color:#1a1919; font-family: ui-sans-serif, system-ui, sans-serif; }
       main { text-align:center; padding:2rem; }
-      h1 { font-size:4rem; margin:0; color:#e19898; font-family: Georgia, serif; }
-      p { color:#b5aeae; margin:.75rem 0 2rem; }
-      a { display:inline-block; background:#b40808; color:#f9f5f5; text-decoration:none;
+      h1 { font-size:4rem; margin:0; color:#b40808; font-family: Georgia, serif; }
+      p { color:#514f4f; margin:.75rem 0 2rem; }
+      a { display:inline-block; background:#b40808; color:#ffffff; text-decoration:none;
           padding:.7rem 1.4rem; border-radius:.5rem; font-weight:600; }
       a:hover { background:#8f0606; }
     </style>
