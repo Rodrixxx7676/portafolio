@@ -1,6 +1,8 @@
 import { Router, type NextFunction, type Request, type RequestHandler, type Response } from 'express';
+import { AnalyticsController } from '../controllers/AnalyticsController.js';
 import { ProfileController } from '../controllers/ProfileController.js';
 import { ProjectsController } from '../controllers/ProjectsController.js';
+import { AnalyticsRepository } from '../models/repositories/AnalyticsRepository.js';
 import { CatalogRepository } from '../models/repositories/CatalogRepository.js';
 import { GithubRepository } from '../models/repositories/GithubRepository.js';
 import { ProfileService } from '../services/ProfileService.js';
@@ -23,6 +25,7 @@ export function createApiRouter(): Router {
 
   const projects = new ProjectsController(new ProjectService(catalog, github));
   const profile = new ProfileController(new ProfileService(catalog));
+  const analytics = new AnalyticsController(new AnalyticsRepository());
 
   const router = Router();
   router.get('/projects', asyncRoute(projects.list));
@@ -30,5 +33,7 @@ export function createApiRouter(): Router {
   router.get('/profile', asyncRoute(profile.get));
   router.get('/timeline', asyncRoute(profile.timeline));
   router.get('/skills', asyncRoute(profile.skills));
+  router.post('/events', asyncRoute(analytics.collect));
+  router.get('/stats', asyncRoute(analytics.summary));
   return router;
 }

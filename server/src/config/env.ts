@@ -48,6 +48,8 @@ export const env = {
    * anuncia HSTS, porque haría inaccesible un entorno que solo escucha en HTTP.
    */
   https: process.env.HTTPS_ENABLED === 'true',
+  /** Testigo para consultar el resumen de visitas. Sin él, el resumen no se sirve. */
+  analyticsToken: process.env.ANALYTICS_TOKEN ?? '',
   dataDir: resolvedDataDir,
   clientDist: resolvedClientDist,
   github: {

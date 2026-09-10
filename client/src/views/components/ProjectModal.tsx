@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { DocumentationViewModel } from '../../viewmodels/useProjectDocumentationViewModel.js';
 import { useLocale } from '../../viewmodels/useLocale.js';
+import { AnalyticsRepository } from '../../models/repositories/AnalyticsRepository.js';
 import { BorderGlow } from './BorderGlow.js';
 import { StateMessage } from './StateMessage.js';
 
@@ -110,6 +111,7 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
                   href={documentation.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => AnalyticsRepository.track('demo', documentation.projectId)}
                   className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
                 >
                   <i className="fa-solid fa-play" aria-hidden="true" />
@@ -122,6 +124,7 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
                   href={documentation.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => AnalyticsRepository.track('repo', documentation.projectId)}
                   className="flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
                 >
                   <i className="fa-brands fa-github" aria-hidden="true" />

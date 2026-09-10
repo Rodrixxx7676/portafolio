@@ -79,6 +79,10 @@ export interface Profile {
   about: LocalizedText;
   location: LocalizedText;
   email: string;
+  /** Teléfono en formato legible, tal como se muestra en pantalla. */
+  phone?: string;
+  /** Enlace directo a WhatsApp (wa.me con el número sin signos). */
+  whatsappUrl?: string;
   linkedinUrl: string;
   githubUrl: string;
   /** Ruta pública al CV en PDF, p. ej. "/cv/francisco-cv.pdf". */

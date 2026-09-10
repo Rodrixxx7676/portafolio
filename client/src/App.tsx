@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { AnalyticsRepository } from './models/repositories/AnalyticsRepository.js';
 import { Footer } from './views/components/Footer.js';
 import { Header } from './views/components/Header.js';
 import { ProjectModal } from './views/components/ProjectModal.js';
@@ -20,6 +22,11 @@ import { useProjectsViewModel } from './viewmodels/useProjectsViewModel.js';
  */
 export function App(): JSX.Element {
   const { locale, t } = useLocale();
+
+  // Una visita por carga de página. No hay cookies ni identificadores.
+  useEffect(() => {
+    AnalyticsRepository.track('pageview', window.location.pathname);
+  }, []);
 
   const profileVm = useProfileViewModel(locale, t('experience.present'));
   const projectsVm = useProjectsViewModel(locale);

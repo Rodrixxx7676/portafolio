@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import type { ProjectDocumentation } from '@portafolio/shared';
+import { AnalyticsRepository } from '../models/repositories/AnalyticsRepository.js';
 import { ProjectRepository } from '../models/repositories/ProjectRepository.js';
 
 /** Estado del modal flotante de documentación. */
@@ -26,6 +27,7 @@ export function useProjectDocumentationViewModel(): DocumentationViewModel {
   const [error, setError] = useState<string | null>(null);
 
   const open = useCallback((projectId: string, projectTitle: string) => {
+    AnalyticsRepository.track('proyecto', projectId);
     setOpenProjectId(projectId);
     setTitle(projectTitle);
     setDocumentation(null);

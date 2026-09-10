@@ -1,4 +1,6 @@
+import { AnalyticsRepository } from '../../models/repositories/AnalyticsRepository.js';
 import { useLocale } from '../../viewmodels/useLocale.js';
+import { useDeviceCapabilities } from '../../viewmodels/useDeviceCapabilities.js';
 import { useScrollScrubbedVideo } from '../../viewmodels/useScrollScrubbedVideo.js';
 
 /**
@@ -22,25 +24,44 @@ export function HeroSection({
 }): JSX.Element {
   const { t } = useLocale();
   const { containerRef, videoRef } = useScrollScrubbedVideo();
+  const { canPlayHeroVideo } = useDeviceCapabilities();
 
   return (
-    <section id="top" ref={containerRef} className="relative h-[220vh]">
+    <section
+      id="top"
+      ref={containerRef}
+      // Sin vídeo no hace falta recorrido extra: la portada ocupa una pantalla.
+      className={canPlayHeroVideo ? 'relative h-[220vh]' : 'relative h-screen'}
+    >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <video
-          ref={videoRef}
-          // La saturación y el contraste devuelven al rojo la fuerza que le
-          // quitan la compresión y el velo oscuro de encima.
-          style={{ filter: 'saturate(1.65) contrast(1.15) brightness(1.05)' }}
-          className="absolute inset-0 h-full w-full object-cover"
-          src="/video/hero.mp4"
-          poster="/video/hero-poster.jpg"
-          // Sin controles ni reproducción automática: el único mando es el scroll.
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-          tabIndex={-1}
-        />
+        {canPlayHeroVideo ? (
+          <video
+            ref={videoRef}
+            // La saturación y el contraste devuelven al rojo la fuerza que le
+            // quitan la compresión y el velo oscuro de encima.
+            style={{ filter: 'saturate(1.65) contrast(1.15) brightness(1.05)' }}
+            className="absolute inset-0 h-full w-full object-cover"
+            src="/video/hero.mp4"
+            poster="/video/hero-poster.jpg"
+            // Sin controles ni reproducción automática: el único mando es el scroll.
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            tabIndex={-1}
+          />
+        ) : (
+          // En móvil o con ahorro de datos, el fotograma fijo: cincuenta
+          // kilobytes en lugar de tres megas, y la misma imagen de portada.
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(/video/hero-poster.jpg)',
+              filter: 'saturate(1.6) contrast(1.1)',
+            }}
+          />
+        )}
 
         {/*
           Velo para que el texto se lea. Cubre con fuerza la banda izquierda,
@@ -77,6 +98,7 @@ export function HeroSection({
               <a
                 href={resumeUrl}
                 download
+                onClick={() => AnalyticsRepository.track('cv')}
                 className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
               >
                 {t('hero.cta.resume')} ↓

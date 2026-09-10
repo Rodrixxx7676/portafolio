@@ -104,6 +104,8 @@ El CV en PDF va en `client/public/cv/` con los nombres que declare
 | `GITHUB_TOKEN` | Sube el límite de la API de GitHub de 60 a 5000 peticiones/hora. | No |
 | `GITHUB_CACHE_TTL_MINUTES` | Minutos de caché de las respuestas de GitHub (30 por defecto). | No |
 | `HTTPS_ENABLED` | Ponla en `true` **solo** cuando el sitio se sirva por HTTPS con certificado. Activa HSTS y la exigencia de HTTPS en la política de seguridad. | No |
+| `ANALYTICS_TOKEN` | Contraseña para consultar el resumen de visitas. Sin ella, el resumen no se sirve. | No |
+| `ANALYTICS_DIR` | Dónde se guardan los sucesos. Por defecto, la carpeta temporal del sistema. | No |
 
 > Un entorno de Elastic Beanstalk recién creado escucha solo en HTTP. Si activas
 > `HTTPS_ENABLED` sin tener certificado, el navegador pedirá cada archivo por
@@ -181,6 +183,31 @@ Para borrar a mano: *Versiones de la aplicación* → seleccionar las antiguas �
 El balanceador consulta `/health`, que responde sin tocar la API de GitHub. Si
 GitHub falla o agota su cuota, el sitio sigue en pie: las tarjetas se muestran
 con los datos curados y sin métricas.
+
+## Estadísticas de visitas
+
+El sitio registra su propio uso, sin cookies, sin servicios de terceros y sin
+guardar direcciones IP ni agentes de usuario: no hay forma de seguir a nadie
+entre visitas. Se anotan cinco cosas — visita, descarga de CV, proyecto
+abierto, salida a la demo y salida al código —, junto con el dominio de
+procedencia y si el visitante venía de móvil o de escritorio. Quien navega con
+la señal «Do Not Track» activada no se registra.
+
+Para consultarlo, define un testigo en el entorno:
+
+```bash
+eb setenv ANALYTICS_TOKEN=una-clave-larga-y-privada
+```
+
+Y luego abre en el navegador:
+
+```
+http://TU-DOMINIO/api/stats?token=una-clave-larga-y-privada&days=30
+```
+
+> **Los datos viven en el disco de la instancia**, así que se pierden al
+> redesplegar o al reiniciarla. Para conservarlos habría que llevarlos a S3 o
+> a una base de datos; sirve tal cual para hacerse una idea semana a semana.
 
 ## Scripts
 

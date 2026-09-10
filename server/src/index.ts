@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import compression from 'compression';
 import express, { type NextFunction, type Request, type Response } from 'express';
@@ -45,6 +46,9 @@ app.get('/health', (_req: Request, res: Response) => {
   res.json({ status: 'ok', uptime: process.uptime() });
 });
 
+// Los sucesos son diminutos: un límite bajo evita que nadie use el
+// endpoint para mandar cargas grandes.
+app.use('/api/events', express.json({ limit: '4kb' }));
 app.use('/api', createApiRouter());
 
 app.use('/api', (_req: Request, res: Response) => {
@@ -55,8 +59,19 @@ app.use('/api', (_req: Request, res: Response) => {
 // sirve Vite y solo se expone la API.
 if (env.clientDist) {
   app.use(express.static(env.clientDist, { maxAge: '1h', index: false }));
-  app.get('*', (_req: Request, res: Response) => {
-    res.sendFile(path.join(env.clientDist as string, 'index.html'));
+
+  // El index se sirve desde memoria para poder completar la dirección de la
+  // imagen social: LinkedIn y WhatsApp descartan las rutas relativas, así que
+  // og:image tiene que salir con el dominio delante.
+  const indexPath = path.join(env.clientDist, 'index.html');
+  const indexHtml = readFileSync(indexPath, 'utf8');
+
+  app.get('*', (req: Request, res: Response) => {
+    // Detrás del balanceador de Beanstalk, el protocolo original viaja en
+    // X-Forwarded-Proto; req.protocol siempre diría "http".
+    const proto = (req.headers['x-forwarded-proto'] as string | undefined)?.split(',')[0] ?? req.protocol;
+    const origin = `${proto}://${req.get('host') ?? ''}`;
+    res.type('html').send(indexHtml.replaceAll('content="/og-image.jpg"', `content="${origin}/og-image.jpg"`));
   });
 } else {
   console.warn('[server] sin build de React: solo se sirve /api');
