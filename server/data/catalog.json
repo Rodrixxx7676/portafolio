@@ -126,5 +126,24 @@
     "repo": "Rodrixxx7676/gideon",
     "coverImage": "/covers/gideon.svg",
     "featured": false
+  },
+  {
+    "id": "portafolio",
+    "title": "Portafolio",
+    "summary": {
+      "es": "Este mismo sitio. React y Express en TypeScript con arquitectura MVVM, documentación de cada proyecto traída en vivo desde la API de GitHub, 33 pruebas automatizadas e integración continua.",
+      "en": "This very site. React and Express in TypeScript with an MVVM architecture, per-project documentation pulled live from the GitHub API, 33 automated tests and continuous integration."
+    },
+    "tags": [
+      "React",
+      "TypeScript",
+      "Express",
+      "MVVM",
+      "AWS"
+    ],
+    "status": "produccion",
+    "repo": "Rodrixxx7676/portafolio",
+    "coverImage": "/covers/portafolio.svg",
+    "featured": false
   }
 ]
