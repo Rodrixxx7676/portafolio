@@ -15,6 +15,8 @@ export interface ProjectCardModel {
   language: string | null;
   /** Fecha lista para mostrar, ya localizada. Vacía si GitHub no la dio. */
   updatedLabel: string;
+  /** Portada del proyecto: la propia, o la que genera GitHub. */
+  coverImage: string | undefined;
   /** Hay una demo abierta al público: la tarjeta lo anuncia antes del clic. */
   hasDemo: boolean;
   /** El código es visible en GitHub. */
@@ -66,6 +68,7 @@ export function useProjectsViewModel(locale: string): ProjectsViewModel {
       forks: project.github?.forks ?? null,
       language: project.github?.language ?? null,
       updatedLabel: formatDate(project.github?.pushedAt ?? null),
+      coverImage: project.coverImage,
       hasDemo: Boolean(project.demoUrl),
       hasRepo: Boolean(project.repoUrl),
       featured: project.featured,

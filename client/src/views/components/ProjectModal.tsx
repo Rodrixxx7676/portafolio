@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { DocumentationViewModel } from '../../viewmodels/useProjectDocumentationViewModel.js';
 import { useLocale } from '../../viewmodels/useLocale.js';
+import { BorderGlow } from './BorderGlow.js';
 import { StateMessage } from './StateMessage.js';
 
 /**
@@ -43,12 +44,19 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
       className="fixed inset-0 z-50 flex items-center justify-center bg-base-950/85 p-4 backdrop-blur-sm sm:p-6"
       onClick={close}
     >
+      <BorderGlow
+        borderRadius={16}
+        glowRadius={30}
+        className="w-full max-w-3xl"
+        // El barrido de presentación marca la apertura de la ventana.
+        animated
+      >
       <div
         role="dialog"
         aria-modal="true"
         aria-label={title}
         onClick={(event) => event.stopPropagation()}
-        className="flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-line bg-base-900 shadow-2xl"
+        className="flex max-h-[85vh] w-full flex-col overflow-hidden"
       >
         <div className="flex shrink-0 items-start justify-between gap-4 border-b border-line px-6 py-4">
           <div className="min-w-0">
@@ -72,7 +80,7 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
               onClick={close}
               className="rounded-lg border border-line px-3 py-1.5 text-sm text-ink-muted transition hover:border-accent-soft hover:text-accent-soft"
             >
-              ✕ {t('modal.close')}
+              <i className="fa-solid fa-xmark" aria-hidden="true" /> {t('modal.close')}
             </button>
             {/* Cómo salir, dicho con todas sus letras. */}
             <span className="hidden text-[10px] text-ink-muted sm:block">
@@ -104,8 +112,9 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
                 >
-                  ▶ {t('modal.viewDemo')}
-                  <span aria-hidden="true">↗</span>
+                  <i className="fa-solid fa-play" aria-hidden="true" />
+                  {t('modal.viewDemo')}
+                  <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true" />
                 </a>
               ) : null}
               {documentation?.repoUrl ? (
@@ -115,14 +124,16 @@ export function ProjectModal({ viewModel }: { viewModel: DocumentationViewModel 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
                 >
-                  {'< >'} {t('modal.viewRepo')}
-                  <span aria-hidden="true">↗</span>
+                  <i className="fa-brands fa-github" aria-hidden="true" />
+                  {t('modal.viewRepo')}
+                  <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true" />
                 </a>
               ) : null}
             </div>
           </div>
         ) : null}
       </div>
+      </BorderGlow>
     </div>
   );
 }

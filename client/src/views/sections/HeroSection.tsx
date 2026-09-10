@@ -1,6 +1,14 @@
 import { useLocale } from '../../viewmodels/useLocale.js';
+import { useScrollScrubbedVideo } from '../../viewmodels/useScrollScrubbedVideo.js';
 
-/** Presentación de apertura: lo primero que ve un reclutador. */
+/**
+ * Apertura del sitio: el vídeo de fondo avanza y retrocede con el scroll
+ * mientras la presentación se mantiene fija encima.
+ *
+ * La sección mide varias pantallas de alto a propósito: esa altura sobrante es
+ * el recorrido que consume el vídeo. El contenido va dentro de una capa
+ * `sticky`, de modo que se queda quieto en pantalla mientras la sección pasa.
+ */
 export function HeroSection({
   name,
   headline,
@@ -13,54 +21,73 @@ export function HeroSection({
   resumeUrl: string;
 }): JSX.Element {
   const { t } = useLocale();
+  const { containerRef, videoRef } = useScrollScrubbedVideo();
 
   return (
-    <section
-      id="top"
-      className="relative mx-auto flex min-h-[85vh] w-full max-w-6xl flex-col justify-center px-6 pt-24"
-    >
-      {/* Halo decorativo; no aporta contenido, se oculta a lectores de pantalla. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
-      />
+    <section id="top" ref={containerRef} className="relative h-[220vh]">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/video/hero.mp4"
+          poster="/video/hero-poster.jpg"
+          // Sin controles ni reproducción automática: el único mando es el scroll.
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          tabIndex={-1}
+        />
 
-      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent-soft">
-        {location}
-      </p>
-      <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-6xl">
-        {name || 'Francisco'}
-        <span className="text-accent-soft">.</span>
-      </h1>
-      <p className="mt-4 max-w-2xl text-lg text-ink-muted sm:text-xl">{headline}</p>
+        {/* Velo oscuro: sin él, el texto blanco se pierde sobre las zonas claras. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/85 to-base-950/40"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-base-950"
+        />
 
-      <div className="mt-9 flex flex-wrap gap-4">
+        <div className="relative mx-auto w-full max-w-6xl px-6">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent-soft">
+            {location}
+          </p>
+          <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-6xl">
+            {name || 'Francisco'}
+            <span className="text-accent-soft">.</span>
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg text-ink-muted sm:text-xl">{headline}</p>
+
+          <div className="mt-9 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
+            >
+              {t('hero.cta.projects')}
+            </a>
+            {resumeUrl ? (
+              <a
+                href={resumeUrl}
+                download
+                className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
+              >
+                {t('hero.cta.resume')} ↓
+              </a>
+            ) : null}
+          </div>
+        </div>
+
+        {/* Pista de que la página continúa hacia abajo. */}
         <a
           href="#projects"
-          className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
+          aria-hidden="true"
+          tabIndex={-1}
+          className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 animate-bounce text-2xl text-ink-muted transition hover:text-accent-soft sm:block"
         >
-          {t('hero.cta.projects')}
+          ↓
         </a>
-        {resumeUrl ? (
-          <a
-            href={resumeUrl}
-            download
-            className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
-          >
-            {t('hero.cta.resume')} ↓
-          </a>
-        ) : null}
       </div>
-
-      {/* Pista de que la página continúa hacia abajo. */}
-      <a
-        href="#projects"
-        aria-hidden="true"
-        tabIndex={-1}
-        className="absolute bottom-10 left-6 hidden animate-bounce text-2xl text-ink-muted transition hover:text-accent-soft sm:block"
-      >
-        ↓
-      </a>
     </section>
   );
 }

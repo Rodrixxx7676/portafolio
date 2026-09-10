@@ -12,11 +12,18 @@ export function ContactSection({
 }): JSX.Element {
   const { t } = useLocale();
 
+  // Los iconos vienen del kit de Font Awesome cargado en index.html.
   const links = [
-    profile?.email ? { key: 'contact.email', href: `mailto:${profile.email}`, external: false } : null,
-    profile?.linkedinUrl ? { key: 'contact.linkedin', href: profile.linkedinUrl, external: true } : null,
-    profile?.githubUrl ? { key: 'contact.github', href: profile.githubUrl, external: true } : null,
-  ].filter((link): link is { key: 'contact.email' | 'contact.linkedin' | 'contact.github'; href: string; external: boolean } => link !== null);
+    profile?.email
+      ? { key: 'contact.email' as const, href: `mailto:${profile.email}`, external: false, icon: 'fa-solid fa-envelope' }
+      : null,
+    profile?.linkedinUrl
+      ? { key: 'contact.linkedin' as const, href: profile.linkedinUrl, external: true, icon: 'fa-brands fa-linkedin-in' }
+      : null,
+    profile?.githubUrl
+      ? { key: 'contact.github' as const, href: profile.githubUrl, external: true, icon: 'fa-brands fa-github' }
+      : null,
+  ].filter((link) => link !== null);
 
   return (
     <SectionShell id="contact" title={t('contact.title')} subtitle={t('contact.subtitle')}>
@@ -26,19 +33,21 @@ export function ContactSection({
             key={link.key}
             href={link.href}
             {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
+            className="flex items-center gap-2.5 rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-accent-soft hover:text-accent-soft"
           >
+            <i className={link.icon} aria-hidden="true" />
             {t(link.key)}
-            {link.external ? ' ↗' : ''}
+            {link.external ? <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true" /> : null}
           </a>
         ))}
         {resumeUrl ? (
           <a
             href={resumeUrl}
             download
-            className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
+            className="flex items-center gap-2.5 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-strong"
           >
-            {t('contact.resume')} ↓
+            <i className="fa-solid fa-file-arrow-down" aria-hidden="true" />
+            {t('contact.resume')}
           </a>
         ) : null}
       </div>

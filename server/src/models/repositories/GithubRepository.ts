@@ -46,11 +46,43 @@ const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
     td: ['align', 'colspan', 'rowspan'],
   },
   allowedSchemes: ['http', 'https', 'mailto'],
-  // Todo enlace del README abre fuera del portafolio y sin acceso al opener.
-  transformTags: {
-    a: sanitizeHtml.simpleTransform('a', { target: '_blank', rel: 'noopener noreferrer' }),
-  },
 };
+
+/**
+ * Construye las reglas de saneado para un repositorio concreto.
+ *
+ * GitHub deja sin resolver las anclas (`#seccion`) y los enlaces a otros
+ * archivos del repositorio (`DESPLIEGUE.md`). Servidos tal cual desde el
+ * portafolio, el navegador los resolvería contra *nuestro* dominio y el
+ * visitante acabaría de vuelta en la página de inicio, o en un 404. Aquí se
+ * reescriben para que apunten a donde de verdad viven.
+ */
+function optionsForRepo(slug: string | null): sanitizeHtml.IOptions {
+  return {
+    ...SANITIZE_OPTIONS,
+    transformTags: {
+      a: (tagName, attribs) => {
+        const href = attribs.href ?? '';
+        let resolved = href;
+
+        if (slug && href) {
+          if (href.startsWith('#')) {
+            // Las anclas del README funcionan en la portada del repositorio.
+            resolved = `https://github.com/${slug}${href}`;
+          } else if (!/^(https?:|mailto:)/i.test(href)) {
+            const clean = href.replace(/^\.\//, '').replace(/^\//, '');
+            resolved = `https://github.com/${slug}/blob/HEAD/${clean}`;
+          }
+        }
+
+        return {
+          tagName,
+          attribs: { ...attribs, href: resolved, target: '_blank', rel: 'noopener noreferrer' },
+        };
+      },
+    },
+  };
+}
 
 /**
  * Cliente de la API pública de GitHub.
@@ -124,7 +156,7 @@ export class GithubRepository {
           console.warn(`[github] README de ${slug} respondió ${response.status}`);
           return '';
         }
-        return sanitizeHtml(await response.text(), SANITIZE_OPTIONS);
+        return sanitizeHtml(await response.text(), optionsForRepo(slug));
       } catch (error) {
         console.warn(`[github] no se pudo leer el README de ${slug}:`, error);
         return '';
@@ -134,6 +166,6 @@ export class GithubRepository {
 
   /** Sanea documentación local con las mismas reglas que el README remoto. */
   static sanitize(html: string): string {
-    return sanitizeHtml(html, SANITIZE_OPTIONS);
+    return sanitizeHtml(html, optionsForRepo(null));
   }
 }

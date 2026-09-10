@@ -67,7 +67,9 @@ export class ProjectService {
       repoUrl: slug ? `https://github.com/${slug}` : undefined,
       // La demo declarada a mano manda sobre la homepage que publica GitHub.
       demoUrl: entry.demoUrl || github?.homepage || undefined,
-      coverImage: entry.coverImage,
+      // Sin portada propia, GitHub genera una con el nombre, la descripción y
+      // las estadísticas del repositorio: mejor eso que un hueco gris.
+      coverImage: entry.coverImage || (slug ? `https://opengraph.githubassets.com/1/${slug}` : undefined),
       github,
       featured: entry.featured ?? false,
     };
