@@ -1,5 +1,7 @@
 # Portafolio de Francisco
 
+[![CI](https://github.com/Rodrixxx7676/portafolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Rodrixxx7676/portafolio/actions/workflows/ci.yml)
+
 Sitio personal para que cualquier reclutador entre, vea los proyectos y llegue
 al código o a la demo en dos clics.
 
@@ -209,6 +211,28 @@ http://TU-DOMINIO/api/stats?token=una-clave-larga-y-privada&days=30
 > redesplegar o al reiniciarla. Para conservarlos habría que llevarlos a S3 o
 > a una base de datos; sirve tal cual para hacerse una idea semana a semana.
 
+## Pruebas
+
+Las pruebas usan el ejecutor incluido en Node, sin ninguna dependencia extra:
+
+```bash
+npm test          # todas
+npm run verify    # tipos, pruebas y compilación, lo mismo que la CI
+```
+
+Cubren la lógica que puede romperse en silencio y dejar el sitio en pie
+mostrando datos equivocados: el vencimiento de la caché, el saneado del HTML
+que llega de GitHub, la combinación entre catálogo y API, el orden de la
+trayectoria y la validación de los sucesos de uso. Las llamadas de red se
+sustituyen por dobles, así que se ejecutan en menos de un segundo y no
+dependen de que GitHub esté disponible.
+
+## Despliegue con HTTPS
+
+Además de Elastic Beanstalk, el sitio puede servirse desde un servidor propio
+detrás de Caddy, que emite el certificado por su cuenta. Ver
+[despliegue/README.md](despliegue/README.md).
+
 ## Scripts
 
 | Comando | Qué hace |
@@ -218,6 +242,8 @@ http://TU-DOMINIO/api/stats?token=una-clave-larga-y-privada&days=30
 | `npm start` | Sirve el build compilado en un solo proceso |
 | `npm run typecheck` | Verifica tipos en todos los workspaces |
 | `npm run bundle` | Genera `deploy/portafolio.zip` para Beanstalk |
+| `npm test` | Ejecuta las pruebas de todos los workspaces |
+| `npm run verify` | Tipos, pruebas y compilación: la comprobación completa |
 | `npm run clean` | Borra los artefactos de build |
 
 ## Pendientes de contenido

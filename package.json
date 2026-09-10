@@ -20,7 +20,9 @@
     "start": "node server/dist/index.js",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "bundle": "bash scripts/bundle.sh",
-    "clean": "rm -rf shared/dist server/dist client/dist deploy"
+    "clean": "rm -rf shared/dist server/dist client/dist deploy",
+    "test": "npm run test --workspaces --if-present",
+    "verify": "npm run typecheck && npm test && npm run build"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

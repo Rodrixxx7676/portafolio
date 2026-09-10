@@ -1,0 +1,41 @@
+name: CI
+
+# Se ejecuta en cada empujón y en cada propuesta de cambio: la idea es que
+# nada llegue a la rama principal sin compilar y sin pasar las pruebas.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verificar:
+    name: Tipos, pruebas y compilación
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # `npm ci` instala exactamente lo que fija el package-lock, de modo que
+      # la integración usa las mismas versiones que la máquina de desarrollo.
+      - name: Instalar dependencias
+        run: npm ci
+
+      # El paquete compartido se compila primero: los otros dos importan sus
+      # tipos y sin él no hay nada que comprobar.
+      - name: Compilar el contrato compartido
+        run: npm run build:shared
+
+      - name: Comprobar tipos
+        run: npm run typecheck
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+      - name: Compilar el sitio
+        run: npm run build
