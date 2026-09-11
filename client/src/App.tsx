@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { AnalyticsRepository } from './models/repositories/AnalyticsRepository.js';
+import { ClickSpark } from './views/components/ClickSpark.js';
+import { DarkVeil } from './views/components/DarkVeil.js';
 import { Footer } from './views/components/Footer.js';
 import { Header } from './views/components/Header.js';
 import { ProjectModal } from './views/components/ProjectModal.js';
@@ -43,6 +45,17 @@ export function App(): JSX.Element {
 
   return (
     <div className="min-h-screen">
+      {/*
+        Velo de nubes rojas sobre blanco, fijo y detrás de todo. Va en modo
+        claro y con el tono girado 241 grados: el shader nace violeta y ese es
+        el giro que lo deja en rojo puro, medido píxel a píxel (con 90, el valor
+        intuitivo, salía verde). A media resolución, para que cueste la cuarta
+        parte, y algo atenuado para que el texto conserve su contraste encima.
+      */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 opacity-75">
+        <DarkVeil lightMode hueShift={241} speed={0.25} warpAmount={0.6} resolutionScale={0.5} />
+      </div>
+
       <Header name={name} hiddenSections={[...hiddenSections]} />
 
       <main>
@@ -61,6 +74,9 @@ export function App(): JSX.Element {
 
       <Footer name={name} />
       <ProjectModal viewModel={documentationVm} />
+
+      {/* Chispas rojas en cada clic, sobre toda la página. */}
+      <ClickSpark sparkColor="#b40808" sparkSize={11} sparkRadius={18} sparkCount={8} duration={420} />
     </div>
   );
 }
