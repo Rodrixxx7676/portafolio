@@ -64,8 +64,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
+  /* Ancho al contenido: el original fijaba 120px, que no se adapta al
+     nombre y descentra el texto en cuanto mide más o menos que eso. */
+  width: auto;
   height: 100%;
+  white-space: nowrap;
 }
 
 .bubble-menu .logo-content > .bubble-logo,
@@ -284,10 +287,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.6em;
-  padding: 0 0.9em;
-  border-radius: 999px;
-  box-shadow: 0 1px 3px rgb(26 25 25 / 0.12), 0 6px 16px rgb(26 25 25 / 0.08);
+  /* Misma altura que el logotipo y el botón: las tres burbujas van a ras. */
+  width: auto;
+  height: var(--bubble-size);
+  padding: 0 16px;
+  border-radius: calc(var(--bubble-size) / 2);
 }
 
 /* Sobre fondo claro, las píldoras necesitan un borde: sin él se confunden
