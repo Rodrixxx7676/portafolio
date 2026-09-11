@@ -19,9 +19,9 @@ export function ExperienceSection({
   return (
     <SectionShell id="experience" title={t('experience.title')}>
       <div className="grid gap-12 lg:grid-cols-2">
-        {work.length > 0 ? <TimelineColumn title={t('experience.work')} items={work} /> : null}
+        {work.length > 0 ? <TimelineColumn title={t('experience.work')} items={work} t={t} /> : null}
         {education.length > 0 ? (
-          <TimelineColumn title={t('experience.education')} items={education} />
+          <TimelineColumn title={t('experience.education')} items={education} t={t} />
         ) : null}
       </div>
     </SectionShell>
@@ -31,9 +31,11 @@ export function ExperienceSection({
 function TimelineColumn({
   title,
   items,
+  t,
 }: {
   title: string;
   items: TimelineItemModel[];
+  t: (key: 'experience.credential') => string;
 }): JSX.Element {
   return (
     <div>
@@ -48,6 +50,17 @@ function TimelineColumn({
             <h4 className="mt-1 font-semibold text-ink">{item.role}</h4>
             <p className="text-sm text-accent-soft">{item.organization}</p>
             <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.description}</p>
+            {item.credentialUrl ? (
+              <a
+                href={item.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline"
+              >
+                <i className="fa-regular fa-file-pdf" aria-hidden="true" />
+                {t('experience.credential')}
+              </a>
+            ) : null}
             {item.tags.length > 0 ? (
               <ul className="mt-3 flex flex-wrap gap-2">
                 {item.tags.map((tag) => (

@@ -102,6 +102,8 @@ export interface TimelineEntry {
   endDate: string | null;
   description: LocalizedText;
   tags: string[];
+  /** Enlace al documento que acredita la entrada (PDF del certificado). */
+  credentialUrl?: string;
 }
 
 /** Categoría de habilidades técnicas mostrada en la sección Skills. */

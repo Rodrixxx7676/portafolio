@@ -12,6 +12,8 @@ export interface TimelineItemModel {
   period: string;
   description: string;
   tags: string[];
+  /** Enlace al certificado, si la entrada lo tiene. */
+  credentialUrl?: string;
 }
 
 export interface ProfileViewModel {
@@ -59,6 +61,7 @@ export function useProfileViewModel(locale: Locale, presentLabel: string): Profi
             }`,
       description: entry.description[locale],
       tags: entry.tags,
+      credentialUrl: entry.credentialUrl,
     }));
   }, [timelineResource.data, locale, presentLabel]);
 

@@ -74,5 +74,102 @@
       "ITIL",
       "Gestión de servicios TI"
     ]
+  },
+  {
+    "id": "ia-hackathon",
+    "kind": "educacion",
+    "role": {
+      "es": "Equipo organizador del IA Hackathon",
+      "en": "IA Hackathon organising team"
+    },
+    "organization": "Universidad Científica del Sur · Embajada de EE. UU.",
+    "startDate": "2024-10",
+    "endDate": "2024-10",
+    "description": {
+      "es": "Miembro del equipo organizador del IA Hackathon «Buscando Soluciones Sostenibles», con respaldo de la Embajada de Estados Unidos en Lima. Reconocimiento firmado por el Decano de Ingeniería.",
+      "en": "Member of the organising team of the IA Hackathon “Buscando Soluciones Sostenibles”, backed by the U.S. Embassy in Lima. Recognition signed by the Dean of Engineering."
+    },
+    "tags": [
+      "Inteligencia artificial",
+      "Organización"
+    ],
+    "credentialUrl": "/certificados/ia-hackathon-2024.pdf"
+  },
+  {
+    "id": "power-bi-fundacion-romero",
+    "kind": "educacion",
+    "role": {
+      "es": "Ruta: Análisis de Datos con Power BI",
+      "en": "Learning path: Data Analysis with Power BI"
+    },
+    "organization": "Fundación Romero · Becas Grupo Romero (CERTUS)",
+    "startDate": "2025-03",
+    "endDate": "2025-03",
+    "description": {
+      "es": "Ruta de aprendizaje de 13 horas lectivas: modelado de datos, visualización e informes con Power BI.",
+      "en": "13-hour learning path: data modelling, visualisation and reporting with Power BI."
+    },
+    "tags": [
+      "Power BI",
+      "Análisis de datos"
+    ],
+    "credentialUrl": "/certificados/analisis-datos-power-bi-certus-2025.pdf"
+  },
+  {
+    "id": "power-bi-santander",
+    "kind": "educacion",
+    "role": {
+      "es": "Power BI",
+      "en": "Power BI"
+    },
+    "organization": "Santander Open Academy",
+    "startDate": "2024-08",
+    "endDate": "2024-08",
+    "description": {
+      "es": "Curso de 8 horas en dos módulos con evaluación, sobre construcción de paneles e informes.",
+      "en": "8-hour course in two assessed modules on building dashboards and reports."
+    },
+    "tags": [
+      "Power BI"
+    ],
+    "credentialUrl": "/certificados/power-bi-santander-2024.pdf"
+  },
+  {
+    "id": "building-talent",
+    "kind": "educacion",
+    "role": {
+      "es": "Taller Building Talent",
+      "en": "Building Talent workshop"
+    },
+    "organization": "Universidad Científica del Sur",
+    "startDate": "2025-08",
+    "endDate": "2025-08",
+    "description": {
+      "es": "Programa de habilidades blandas y empleabilidad junto a empresas como Yape, Belmond, Adium Perú y KimenGames.",
+      "en": "Soft skills and employability programme run with companies such as Yape, Belmond, Adium Perú and KimenGames."
+    },
+    "tags": [
+      "Empleabilidad"
+    ],
+    "credentialUrl": "/certificados/building-talent-2025.pdf"
+  },
+  {
+    "id": "ingles-britanico",
+    "kind": "educacion",
+    "role": {
+      "es": "Inglés · Fase Básica culminada",
+      "en": "English · Basic phase completed"
+    },
+    "organization": "Asociación Cultural Peruano Británica",
+    "startDate": "2024-04",
+    "endDate": "2024-10",
+    "description": {
+      "es": "Cinco ciclos del programa de inglés general para adultos (B08 a B12). Actualmente en la fase intermedia.",
+      "en": "Five cycles of the general English programme for adults (B08 to B12). Currently in the intermediate phase."
+    },
+    "tags": [
+      "Inglés"
+    ],
+    "credentialUrl": "/certificados/ingles-britanico-2024.pdf"
   }
 ]
