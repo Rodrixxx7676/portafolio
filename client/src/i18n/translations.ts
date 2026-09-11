@@ -58,6 +58,10 @@ export const translations = {
     'state.loading': 'Cargando…',
     'state.error': 'No se pudieron cargar los datos.',
     'state.retry': 'Reintentar',
+    'kurs.lema': 'Tecnología que marca tu rumbo.',
+    'kurs.texto':
+      'Fundé KURS para llevar desarrollo web y automatización a las pequeñas y medianas empresas. Cada proyecto de este portafolio nació de la misma idea: construir cosas que funcionen y que alguien use.',
+    'kurs.cta': 'Conocer KURS',
     'footer.built': 'Construido con React, Express y TypeScript sobre AWS Elastic Beanstalk.',
     'lang.toggle': 'Cambiar a inglés',
   },
@@ -114,6 +118,10 @@ export const translations = {
     'state.loading': 'Loading…',
     'state.error': 'The data could not be loaded.',
     'state.retry': 'Retry',
+    'kurs.lema': 'Technology that sets your course.',
+    'kurs.texto':
+      'I founded KURS to bring web development and automation to small and mid-sized businesses. Every project in this portfolio comes from the same idea: build things that work and that someone actually uses.',
+    'kurs.cta': 'Discover KURS',
     'footer.built': 'Built with React, Express and TypeScript on AWS Elastic Beanstalk.',
     'lang.toggle': 'Switch to Spanish',
   },

@@ -9,6 +9,7 @@ import { AboutSection } from './views/sections/AboutSection.js';
 import { ContactSection } from './views/sections/ContactSection.js';
 import { ExperienceSection } from './views/sections/ExperienceSection.js';
 import { HeroSection } from './views/sections/HeroSection.js';
+import { KursSection } from './views/sections/KursSection.js';
 import { ProjectsSection } from './views/sections/ProjectsSection.js';
 import { SkillsSection } from './views/sections/SkillsSection.js';
 import { useLocale } from './viewmodels/useLocale.js';
@@ -70,6 +71,7 @@ export function App(): JSX.Element {
         <ExperienceSection work={profileVm.work} education={profileVm.education} />
         <SkillsSection categories={profileVm.skills} />
         <ContactSection profile={profileVm.profile} resumeUrl={profileVm.resumeUrl} />
+        <KursSection />
       </main>
 
       <Footer name={name} />
