@@ -32,8 +32,10 @@ export function KursSection(): JSX.Element {
               className="h-full w-full object-contain"
               src="/video/kurs.mp4"
               poster="/video/kurs-poster.jpg"
-              // Se reproduce una vez al entrar en pantalla y se queda en el logo.
+              // En bucle mientras la sección esté a la vista. El archivo lleva
+              // fundidos a negro en ambos extremos para que el empalme no se note.
               muted
+              loop
               playsInline
               preload="metadata"
               aria-hidden="true"

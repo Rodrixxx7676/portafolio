@@ -1,13 +1,12 @@
 import { useEffect, useRef, type RefObject } from 'react';
 
 /**
- * Reproduce un vídeo una sola vez cada vez que entra en pantalla.
+ * Reproduce un vídeo solo mientras está en pantalla.
  *
- * Pensado para animaciones de marca que revelan algo y terminan en una imagen
- * fija: ponerlas en bucle obligaría a ver el salto del final al principio, y
- * reproducirlas al cargar la página las gastaría antes de que nadie mire.
- * Cuando la sección sale de la vista, el vídeo se detiene y vuelve al inicio,
- * listo para la próxima visita.
+ * Reproducirlo al cargar la página lo gastaría antes de que nadie mire, y
+ * dejarlo correr fuera de la vista consume batería para nada. Cuando la
+ * sección entra, arranca; cuando sale, se detiene. Si el elemento lleva
+ * `loop`, al volver sigue donde estaba.
  */
 export function useRevealVideo(): RefObject<HTMLVideoElement> {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -16,24 +15,16 @@ export function useRevealVideo(): RefObject<HTMLVideoElement> {
     const video = videoRef.current;
     if (!video) return;
 
-    // Quien pide menos animación ve el fotograma final desde el principio.
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      video.removeAttribute('autoplay');
-      return;
-    }
+    // Quien pide menos animación ve el fotograma de portada, quieto.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry) return;
-        if (entry.isIntersecting) {
-          video.currentTime = 0;
-          void video.play().catch(() => undefined);
-        } else {
-          video.pause();
-        }
+        if (entry.isIntersecting) void video.play().catch(() => undefined);
+        else video.pause();
       },
-      // Arranca cuando ya se ve al menos un tercio: así el visitante lo ve
-      // desde el principio y no a medias.
+      // Arranca cuando ya se ve al menos un tercio.
       { threshold: 0.35 },
     );
 

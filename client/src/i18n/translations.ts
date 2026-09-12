@@ -63,7 +63,6 @@ export const translations = {
     'kurs.texto':
       'Fundé KURS para llevar desarrollo web y automatización a las pequeñas y medianas empresas. Cada proyecto de este portafolio nació de la misma idea: construir cosas que funcionen y que alguien use.',
     'kurs.cta': 'Conocer KURS',
-    'footer.built': 'Construido con React, Express y TypeScript sobre AWS Elastic Beanstalk.',
     'lang.toggle': 'Cambiar a inglés',
   },
   en: {
@@ -124,7 +123,6 @@ export const translations = {
     'kurs.texto':
       'I founded KURS to bring web development and automation to small and mid-sized businesses. Every project in this portfolio comes from the same idea: build things that work and that someone actually uses.',
     'kurs.cta': 'Discover KURS',
-    'footer.built': 'Built with React, Express and TypeScript on AWS Elastic Beanstalk.',
     'lang.toggle': 'Switch to Spanish',
   },
 } as const satisfies Record<Locale, Record<string, string>>;
