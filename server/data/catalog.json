@@ -39,6 +39,26 @@
     "featured": true
   },
   {
+    "id": "caballero-negro",
+    "title": "El Caballero Negro",
+    "summary": {
+      "es": "Carta digital de un restaurante de pastas y pizzas en Villa El Salvador: menú por categorías, historia del local, ubicación y un asistente que responde preguntas sobre la carta. ASP.NET Core 10 con React, desplegado en AWS.",
+      "en": "Digital menu for a pasta and pizza restaurant in Villa El Salvador: categorised menu, the venue's story, location and an assistant that answers questions about the dishes. ASP.NET Core 10 with React, deployed on AWS."
+    },
+    "tags": [
+      "ASP.NET Core",
+      "C#",
+      "React",
+      "TypeScript",
+      "AWS",
+      "OpenAI"
+    ],
+    "status": "activo",
+    "repo": "Rodrixxx7676/caballero-negro",
+    "coverImage": "/covers/caballero-negro.svg",
+    "featured": true
+  },
+  {
     "id": "kurs-seenode",
     "title": "KURS",
     "summary": {
